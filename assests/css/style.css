@@ -1,0 +1,43 @@
+/* nav menu */
+  .clip-path-logo {
+            clip-path: polygon(0% 0%, 30% 0%, 30% 40%, 100% 0%, 100% 30%, 50% 55%, 100% 80%, 100% 100%, 0% 100%);
+        }
+/* nav menu */
+/* home page hero banner  */
+.dot {
+            width: 8px;
+            height: 8px;
+            background: #FFFFFF4D;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            width: 24px;
+            height: 8px;
+            background: #F5B800;
+            border-radius: 4px; /* "Normal" rounded instead of full circle */
+        }
+/* home page hero banner  */
+[x-cloak] { display: none !important; }
+
+.extra-bold-header { font-weight: 800; font-size: 24px; line-height: 32px; color: #0A2342; }
+        .regular-text { font-weight: 400; font-size: 16px; line-height: 24px; color: #555555; }
+        .form-label { font-weight: 600; font-size: 14px; color: #0A2342; margin-bottom: 8px; display: block; }
+        .input-field { 
+            width: 100%; padding: 12px 16px; border-radius: 14px; border: 0.8px solid #C7C7C7;
+            font-size: 16px; line-height: 24px; color: #0A0A0A80; outline: none; transition: border-color 0.2s;
+        }
+        .input-field:focus { border-color: #1B55C5; }
+        .gradient-card { background: linear-gradient(135deg, #0A2342 0%, #1B55C5 100%); }
+
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }

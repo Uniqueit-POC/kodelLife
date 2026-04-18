@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- start menu and bar  -->
+    <header class="bg-[#051127] px-8 py-4 flex items-center justify-between font-sans relative">
+
+        <div class="flex items-center space-x-2 z-50">
+            <div class="flex flex-col leading-none">
+                <img src="./assests/img/logo/logo.svg" alt="">
+            </div>
+        </div>
+
+         <nav class="hidden lg:flex items-center space-x-8 text-[#C7C7C7] font-medium text-base leading-normal">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-gray-300 transition focus:outline-none">
+                    <span>Products</span>
+                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                    <a href="product.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">API</a>
+                    <a href="intermediate-api.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Intermediate API</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="hover:text-gray-300 transition">About</a>
+            <a href="blogs.html" class="hover:text-gray-300 transition">Blogs</a>
+            <a href="contact.html" class="hover:text-gray-300 transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <a href="Contact.html"
+                class="hidden sm:flex bg-[#F5B800] hover:bg-[#e6ae00] text-[#0A2342] px-5 py-2 rounded-full font-semibold items-center space-x-2 transition-all text-base">
+                <i class="fa-solid fa-flask"></i>
+                <span>Request a Sample</span>
+            </a>
+
+            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl focus:outline-none z-50">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+       <div id="mobile-menu"
+            class="fixed inset-0 bg-[#0A2342] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col items-center justify-center space-y-8 text-xl text-white">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+            <button onclick="toggleMobileDropdown()" class="flex items-center space-x-2">
+                <span>Products</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div id="mobile-dropdown" class="hidden flex-col items-center space-y-4 bg-[#00153d] w-full py-4 text-base">
+                <a href="product.html" class="text-gray-300">API</a>
+                <a href="intermediate-api.html" class="text-gray-300">Intermediate API</a>
+            </div>
+            <a href="about.html" class="text-[#F5B800]">About</a>
+            <a href="blogs.html" class="text-gray-300">Blogs</a>
+            <a href="contact.html" class="text-gray-300">Contact</a>
+            <a href="contact.html" class="bg-[#F5B800] text-[#0A2342] px-8 py-3 rounded-full font-bold">Request a Sample</a>
+        </div>
+
+    </header>
+    <!-- end menu and bar  -->
+
+    <!-- hero banner start here -->
+    <section class="text-white font-sans overflow-hidden">
+        <div id="slider" class="relative w-full md:h-[620px] h-full">
+            <div id="track" class="flex transition-transform duration-700 ease-in-out h-full">
+
+                <section
+                    class="w-full md:h-full h-auto flex-shrink-0 flex items-center px-4 lg:px-36 bg-[url('./assests/img/banner/mob-1.png')] md:bg-[url('./assests/img/banner/1.png')] bg-no-repeat bg-bottom bg-cover">
+                    <div class="grid lg:grid-cols-2 w-full items-center gap-10">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-8 h-[2px] bg-brand-yellow"></div>
+                                <span class="text-xs font-semibold text-brand-yellow tracking-widest uppercase">Our
+                                    In-House Manufacturing API</span>
+                            </div>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span
+                                    class="text-xl font-mono font-medium text-[#C7C7C7]">C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S</span>
+                                <span class="text-xl font-mono font-medium text-[#C7C7C7]">CAS 54-31-9</span>
+                            </div>
+                            <h1 class="text-3xl md:text-5xl font-semibold sans mb-4">Furosemide</h1>
+                            <span
+                                class="inline-block bg-blue-900/40 text-blue-400 px-4 py-1 rounded-full text-xs font-semibold mb-8">Loop
+                                Diuretic</span>
+                            <p class="text-lg text-gray-300 mb-10">
+                                High-Capacity Loop Diuretic <br class="block md:hidden"> Trusted by 21 Nations
+                            </p>
+
+                            <div class="flex gap-4 md:gap-10 mb-8 border-l border-white/10">
+                                <div class="border-r border-white/30 pr-4 md:pr-10">
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">30 MT/Month</p>
+                                    <p class="text-xs text-gray-400 uppercase">Production Capacity</p>
+                                </div>
+                                <div class="border-r border-white/30 pr-4 md:pr-10">
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">21</p>
+                                    <p class="text-xs text-gray-400 uppercase">Export Markets</p>
+                                </div>
+                                <div>
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">ISO + FDA</p>
+                                    <p class="text-xs text-gray-400 uppercase">Certified Quality</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-14 md:mb-0 w-full px-4 md:px-0">
+                                <a href="product.html"
+                                    class="w-full sm:w-auto bg-brand-yellow text-black px-8 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-transform hover:scale-105 active:scale-95">
+                                    Product Details
+                                    <span>→</span>
+                                </a>
+
+                                <a href="Contact.html"
+                                    class="w-full sm:w-auto border border-white/30 text-white px-8 py-3 rounded-full font-bold flex items-center justify-center transition-colors hover:bg-white/10">
+                                    Request a Sample
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="w-full md:h-full h-auto flex-shrink-0 flex items-center px-4 lg:px-36 bg-[url('./assests/img/banner/mob-2.png')] md:bg-[url('./assests/img/banner/2.png')] bg-no-repeat bg-bottom bg-cover">
+                    <div class="grid lg:grid-cols-2 w-full items-center gap-10">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-8 h-[2px] bg-brand-yellow"></div>
+                                <span class="text-xs font-semibold text-brand-yellow tracking-widest uppercase">Our
+                                    In-House Manufacturing API</span>
+                            </div>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span
+                                    class="text-xl font-mono font-medium text-[#C7C7C7]">C<sub>7</sub>H<sub>8</sub>ClN<sub>3</sub>O<sub>4</sub>S<sub>2</sub></span>
+                                <span class="text-xl font-mono font-medium text-[#C7C7C7]">CAS 58-93-5</span>
+                            </div>
+                            <h1 class="text-3xl md:text-5xl font-semibold sans mb-4">Hydrochlorothiazide</h1>
+                            <span
+                                class="inline-block bg-blue-900/40 text-blue-400 px-4 py-1 rounded-full text-xs font-semibold mb-8">Loop
+                                Diuretic</span>
+                            <p class="text-lg text-gray-300 mb-10">High-Capacity Loop Diuretic <br
+                                    class="block md:hidden"> Trusted by 21 Nations</p>
+
+                            <div class="flex gap-4 md:gap-10 mb-8 items-center">
+                                <div class="border-r border-white/30 pr-4 md:pr-10">
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">30 MT/Month</p>
+                                    <p class="text-xs text-gray-400 uppercase">Production Capacity</p>
+                                </div>
+
+                                <div class="border-r border-white/30 pr-4 md:pr-10">
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">21</p>
+                                    <p class="text-xs text-gray-400 uppercase">Export Markets</p>
+                                </div>
+
+                                <div>
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">ISO + FDA</p>
+                                    <p class="text-xs text-gray-400 uppercase">Certified Quality</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-14  md:mb-0 w-full px-4 md:px-0">
+                                <a href="product.html"
+                                    class="w-full sm:w-auto bg-brand-yellow text-black px-8 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-transform hover:scale-105 active:scale-95">
+                                    Product Details
+                                    <span>→</span>
+                                </a>
+
+                                <a href="Contact.html"
+                                    class="w-full sm:w-auto border border-white/30 text-white px-8 py-3 rounded-full font-bold flex items-center justify-center transition-colors hover:bg-white/10">
+                                    Request a Sample
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="w-full md:h-full h-auto flex-shrink-0 flex items-center px-4 lg:px-36 bg-[url('./assests/img/banner/mob-3.png')] md:bg-[url('./assests/img/banner/3.png')] bg-no-repeat bg-bottom bg-cover">
+                    <div class="grid lg:grid-cols-2 w-full items-center gap-10">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-8 h-[2px] bg-brand-yellow"></div>
+                                <span class="text-xs font-semibold text-brand-yellow tracking-widest uppercase">Our
+                                    In-House Manufacturing API</span>
+                            </div>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span
+                                    class="text-xl font-mono font-medium text-[#C7C7C7]">C<sub>34</sub>H<sub>56</sub>N<sub>2</sub>O<sub>10</sub></span>
+                                <span class="text-xl font-mono font-medium text-[#C7C7C7]">CAS 98418-47-4</span>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <h1 class="text-5xl md:text-5xl font-semibold sans mb-4">Metoprolol Succinate</h1>
+                            </div>
+                            <span
+                                class="inline-block bg-blue-900/40 text-blue-400 px-4 py-1 rounded-full text-xs font-semibold mb-8">Loop
+                                Diuretic</span>
+                            <p class="text-lg text-gray-300 mb-10">High-Capacity Loop Diuretic <br
+                                    class="block md:hidden"> Trusted by 21 Nations</p>
+
+                            <div class="flex gap-4 md:gap-10 mb-8 border-l border-white/10">
+                                <div class="border-r border-white/30 pr-4 md:pr-10">
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">30 MT/Month</p>
+                                    <p class="text-xs text-gray-400 uppercase">Production Capacity</p>
+                                </div>
+                                <div class="border-r border-white/30 pr-4 md:pr-10">
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">21</p>
+                                    <p class="text-xs text-gray-400 uppercase">Export Markets</p>
+                                </div>
+                                <div>
+                                    <p class="text-brand-yellow text-base md:text-2xl font-bold">ISO + FDA</p>
+                                    <p class="text-xs text-gray-400 uppercase">Certified Quality</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-20   md:mb-0 w-full px-4 md:px-0">
+                                <a href="product.html"
+                                    class="w-full sm:w-auto bg-brand-yellow text-black px-8 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-transform hover:scale-105 active:scale-95">
+                                    Product Details
+                                    <span>→</span>
+                                </a>
+
+                                <a href="Contact.html"
+                                    class="w-full sm:w-auto border border-white/30 text-white px-8 py-3 rounded-full font-bold flex items-center justify-center transition-colors hover:bg-white/10">
+                                    Request a Sample
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="absolute bottom-4 left-0 w-full px-10 lg:px-36 flex justify-between items-center">
+
+                <div class="flex gap-2" id="pagination">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <div class="hidden md:flex flex-col items-center gap-2">
+                    <span class="text-[10px] uppercase tracking-widest text-gray-500">Scroll</span>
+                    <div class="w-[1px] h-10 bg-gradient-to-b from-white/40 to-transparent"></div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="flex gap-2">
+                        <button id="prev"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-brand-yellow hover:text-brand-yellow transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="next"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-brand-yellow hover:text-brand-yellow transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="text-lg font-mono tracking-tighter">
+                        <span id="current-index" class="text-brand-yellow">01</span>
+                        <span class="text-gray-500 mx-1">/</span>
+                        <span class="text-gray-500">03</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero banner end here -->
+
+    <!-- counter section start here -->
+    <section class="w-full py-10 px-4 bg-[linear-gradient(90deg,#0A2342_0%,#0D3B5E_50%,#1B55C5_100%)] sans">
+        <div class="max-w-7xl mx-auto md:px-28 px-4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div class="flex flex-col items-center text-center">
+                <h2 class="text-[44px] font-extrabold text-brand-yellow leading-tight mb-2">5+</h2>
+                <h3 class="text-base font-semibold text-white leading-[20px] mb-1">API Products</h3>
+                <p class="text-sm font-regular text-[#E8EEF9] leading-[16px]">Active Pharmaceutical Ingredients</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+                <h2 class="text-[44px] font-extrabold text-brand-yellow leading-tight mb-2">30</h2>
+                <h3 class="text-base font-semibold text-white leading-[20px] mb-1">MT/Month Capacity</h3>
+                <p class="text-sm font-regular text-[#E8EEF9] leading-[16px]">Peak production capability</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+                <h2 class="text-[44px] font-extrabold text-brand-yellow leading-tight mb-2">21</h2>
+                <h3 class="text-base font-semibold text-white leading-[20px] mb-1">Countries Served</h3>
+                <p class="text-sm font-regular text-[#E8EEF9] leading-[16px]">Global export markets</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+                <h2 class="text-[44px] font-extrabold text-brand-yellow leading-tight mb-2">5+</h2>
+                <h3 class="text-base font-semibold text-white leading-[20px] mb-1">Years of Excellence</h3>
+                <p class="text-sm font-regular text-[#E8EEF9] leading-[16px]">Industry expertise</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- counter section end here -->
+
+    <!-- Our Portfolio section start here -->
+    <section class="max-w-7xl mx-auto py-16 md:px-6 px-4 font-sans">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <span class="text-sm font-semibold leading-5 tracking-[1.4px] uppercase text-brand-blue block mb-2">
+                    Our Portfolio
+                </span>
+                <h2 class="text-[32px] md:text-[40px]  font-extrabold leading-[46px] tracking-[-0.8px] text-brand-dark">
+                    API Products We Manufacture
+                </h2>
+            </div>
+            <a href="product.html"
+                class="md:block hidden text-base font-semibold text-brand-blue flex items-center gap-1 hover:underline">
+                View All Products <span class="text-xl">→</span>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/b82e24e3c5d0c9fc2895dd7cc32b9f121080af5f.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#EFF6FF] border border-[#BEDBFF] rounded-full">
+                        <span class="text-sm font-semibold text-[#1447E6] leading-4">Diuretics</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <button
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/9beed95d5a8513010ce3117b39024b9397bb3972.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#EFF6FF] border border-[#BEDBFF] rounded-full">
+                        <span class="text-sm font-semibold text-[#1447E6] leading-4">Diuretics</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <button
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/f3c87ad59d7f5ead3a6ae92d41806288f1367440.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#FFF1F2] border border-[#FFCCD3] rounded-full">
+                        <span class="text-sm font-semibold text-[#C70036] leading-4">Cardiovascular Care</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <button
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-5 block md:hidden">
+            <a href="product.html" class=" text-base font-semibold text-brand-blue flex items-center gap-1 hover:underline">
+                View All Products <span class="text-xl">→</span>
+            </a>
+        </div>
+    </section>
+    <!-- Our Portfolio section end here -->
+
+    <!-- Why Choose Us section start here -->
+    <section class="w-full py-14 px-4 bg-[linear-gradient(180deg,rgba(238,243,252,0.2)_0%,#DCE9F8_100%)] sans">
+        <div class="max-w-7xl mx-auto md:px-28 px-6">
+
+            <div class="text-center mb-10">
+                <span class="text-sm font-semibold text-[#1B55C5] tracking-[1.4px] uppercase mb-3 block">
+                    Why Choose Us
+                </span>
+                <h2
+                    class="text-[32px] md:text-[40px]  font-extrabold text-[#0A2342] leading-[46px] tracking-[-0.8px] mb-4">
+                    What Sets Our API Manufacturing Apart
+                </h2>
+                <p class="max-w-2xl mx-auto text-base font-normal text-[#45556C] leading-[24px]">
+                    Trusted by pharmaceutical companies across 21 countries, we deliver API excellence backed by
+                    certification and capacity.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+
+                <div
+                    class="group bg-white p-6 rounded-xl shadow-[0px_4px_8px_0px_#0000001A] border-t-[0.8px] border-black/5 hover:bg-[#1B55C5] transition-all duration-300 cursor-pointer flex flex-col h-auto">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#EBF2FF] flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                        <svg class="text-[#1B55C5] group-hover:text-white" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 13C20 18 16.5 20.5 12.34 21.95C12.1222 22.0238 11.8855 22.0202 11.67 21.94C7.5 20.5 4 18 4 13V5.99996C4 5.73474 4.10536 5.48039 4.29289 5.29285C4.48043 5.10532 4.73478 4.99996 5 4.99996C7 4.99996 9.5 3.79996 11.24 2.27996C11.4519 2.09896 11.7214 1.99951 12 1.99951C12.2786 1.99951 12.5481 2.09896 12.76 2.27996C14.51 3.80996 17 4.99996 19 4.99996C19.2652 4.99996 19.5196 5.10532 19.7071 5.29285C19.8946 5.48039 20 5.73474 20 5.99996V13Z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 12L11 14L15 10" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#0A2342] leading-[24px] mb-3 group-hover:text-white">Certified
+                        Quality</h3>
+                    <p class="text-sm font-regular text-[#555555] leading-[22px] group-hover:text-white/90">
+                        ISO 9001:2015 certified processes and FDA-compliant manufacturing with rigorous quality control
+                        at every stage.
+                    </p>
+                </div>
+
+                <div
+                    class="mt-0 lg:mt-10 group bg-white p-6 rounded-xl shadow-[0px_4px_8px_0px_#0000001A] border-t-[0.8px] border-black/5 hover:bg-[#1B55C5] transition-all duration-300 cursor-pointer flex flex-col h-auto">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#EBF2FF] flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                        <svg class="w-6 h-6 text-[#1B55C5] group-hover:text-white" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#0A2342] leading-[24px] mb-3 group-hover:text-white">Global
+                        Reach</h3>
+                    <p class="text-sm font-regular text-[#555555] leading-[22px] group-hover:text-white/90">
+                        Trusted by pharmaceutical companies across 21 countries spanning Asia, Europe, Africa, and the
+                        Americas.
+                    </p>
+                </div>
+
+                <div
+                    class="group bg-white p-6 rounded-xl shadow-[0px_4px_8px_0px_#0000001A] border-t-[0.8px] border-black/5 hover:bg-[#1B55C5] transition-all duration-300 cursor-pointer flex flex-col h-auto">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#EBF2FF] flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                        <svg class="text-[#1B55C5] group-hover:text-white width=" 24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 2V8C13.9998 8.33548 14.0841 8.66561 14.245 8.96L19.755 19.04C19.9216 19.3446 20.0061 19.6874 20.0001 20.0345C19.9941 20.3817 19.8979 20.7213 19.7208 21.02C19.5437 21.3187 19.2919 21.5661 18.9902 21.7379C18.6885 21.9098 18.3472 22.0001 18 22H5.99997C5.65275 22.0001 5.31149 21.9098 5.00976 21.7379C4.70804 21.5661 4.45625 21.3187 4.27916 21.02C4.10208 20.7213 4.0058 20.3817 3.99981 20.0345C3.99382 19.6874 4.07831 19.3446 4.24497 19.04L9.75497 8.96C9.91587 8.66561 10.0001 8.33548 9.99997 8V2"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6.453 15H17.547" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8.5 2H15.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                    <h3 class="text-base font-bold text-[#0A2342] leading-[24px] mb-3 group-hover:text-white">Innovation
+                        Driven</h3>
+                    <p class="text-sm font-regular text-[#555555] leading-[22px] group-hover:text-white/90">
+                        Continuous R&D investment in API development with three exciting pipeline products under
+                        development.
+                    </p>
+                </div>
+
+                <div
+                    class="mt-0 lg:mt-10 group bg-white p-6 rounded-xl shadow-[0px_4px_8px_0px_#0000001A] border-t-[0.8px] border-black/5 hover:bg-[#1B55C5] transition-all duration-300 cursor-pointer flex flex-col h-auto">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#EBF2FF] flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                        <svg class="text-[#1B55C5] group-hover:text-white" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 15L11 17L15 13" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#0A2342] leading-[24px] mb-3 group-hover:text-white">Regulatory
+                        Compliance</h3>
+                    <p class="text-sm font-regular text-[#555555] leading-[22px] group-hover:text-white/90">
+                        Adherence to international regulatory standards ensuring smooth import approvals in all export
+                        markets.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us section end here -->
+
+    <!-- Manufacturing Excellence section start here -->
+    <section class="relative min-h-[500px] flex items-center justify-center overflow-hidden font-sans">
+
+        <div class="absolute inset-0 z-0">
+            <img src="./assests/img/home/ManufacturingExcellence/ManufacturingExcellencebg.png"
+                alt="Manufacturing Facility" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-[#0A2342D9] mix-blend-darken"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center text-white">
+
+            <span class="text-sm font-semibold leading-5 tracking-[1.4px] uppercase text-brand-yellow block mb-4">
+                Manufacturing Excellence
+            </span>
+
+            <h2
+                class="text-[32px] md:text-[40px]  font-extrabold leading-[48px] tracking-[-0.8px] mb-6 max-w-4xl mx-auto">
+                State–of–the–Art API Manufacturing with Up to 30 MT/Month Capacity
+            </h2>
+
+            <p class="text-[18px] font-normal leading-6 text-[#C7C7C7] max-w-3xl mx-auto mb-16">
+                Our production facilities are equipped with modern synthesis infrastructure, multi-stage quality
+                checkpoints, and fully documented processes that meet international GMP expectations.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-yellow/15 flex items-center justify-center mb-4 border border-brand-yellow/20">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.16667 18.1083C9.42003 18.2546 9.70744 18.3316 10 18.3316C10.2926 18.3316 10.58 18.2546 10.8333 18.1083L16.6667 14.775C16.9198 14.6289 17.13 14.4187 17.2763 14.1657C17.4225 13.9126 17.4997 13.6256 17.5 13.3333V6.66666C17.4997 6.37438 17.4225 6.08733 17.2763 5.83429C17.13 5.58125 16.9198 5.37112 16.6667 5.22499L10.8333 1.89166C10.58 1.74538 10.2926 1.66837 10 1.66837C9.70744 1.66837 9.42003 1.74538 9.16667 1.89166L3.33333 5.22499C3.08022 5.37112 2.86998 5.58125 2.72372 5.83429C2.57745 6.08733 2.5003 6.37438 2.5 6.66666V13.3333C2.5003 13.6256 2.57745 13.9126 2.72372 14.1657C2.86998 14.4187 3.08022 14.6289 3.33333 14.775L9.16667 18.1083Z"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10 18.3333V10" stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2.74167 5.83334L10 10L17.2583 5.83334" stroke="#F5B800" stroke-width="1.66667"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M6.25 3.55832L13.75 7.84999" stroke="#F5B800" stroke-width="1.66667"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="text-[30px] font-extrabold text-brand-yellow leading-tight">5</div>
+                    <div class="text-base text-[#D1DDF3] font-normal">APIs in Portfolio</div>
+                </div>
+
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-yellow/15 flex items-center justify-center mb-4 border border-brand-yellow/20">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.6667 1.66666V6.66666C11.6665 6.94623 11.7368 7.22133 11.8708 7.46666L16.4625 15.8667C16.6014 16.1205 16.6718 16.4061 16.6668 16.6954C16.6618 16.9847 16.5816 17.2678 16.434 17.5167C16.2864 17.7656 16.0766 17.9717 15.8252 18.1149C15.5737 18.2581 15.2894 18.3334 15 18.3333H5C4.71065 18.3334 4.42626 18.2581 4.17482 18.1149C3.92339 17.9717 3.71356 17.7656 3.56599 17.5167C3.41842 17.2678 3.33819 16.9847 3.3332 16.6954C3.3282 16.4061 3.39861 16.1205 3.5375 15.8667L8.12917 7.46666C8.26324 7.22133 8.33345 6.94623 8.33333 6.66666V1.66666"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M5.3775 12.5H14.6225" stroke="#F5B800" stroke-width="1.66667"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7.08334 1.66666H12.9167" stroke="#F5B800" stroke-width="1.66667"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="text-[30px] font-extrabold text-brand-yellow leading-tight">4</div>
+                    <div class="text-base text-[#D1DDF3] font-normal">Intermediates</div>
+                </div>
+
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-yellow/15 flex items-center justify-center mb-4 border border-brand-yellow/20">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.33331 11.6667C3.17561 11.6672 3.021 11.623 2.88743 11.5391C2.75387 11.4553 2.64683 11.3353 2.57876 11.193C2.51069 11.0508 2.48438 10.8921 2.50289 10.7355C2.52139 10.5789 2.58396 10.4308 2.68331 10.3083L10.9333 1.80833C10.9952 1.73689 11.0795 1.68862 11.1725 1.67144C11.2654 1.65425 11.3614 1.66917 11.4447 1.71375C11.5281 1.75832 11.5938 1.82991 11.6311 1.91675C11.6684 2.00359 11.675 2.10053 11.65 2.19166L10.05 7.20833C10.0028 7.3346 9.98695 7.47043 10.0038 7.60417C10.0206 7.7379 10.0697 7.86556 10.1467 7.97618C10.2237 8.0868 10.3265 8.17709 10.446 8.23929C10.5656 8.3015 10.6985 8.33377 10.8333 8.33333H16.6666C16.8243 8.33279 16.9789 8.37701 17.1125 8.46084C17.2461 8.54468 17.3531 8.6647 17.4212 8.80695C17.4893 8.94919 17.5156 9.10784 17.4971 9.26444C17.4786 9.42105 17.416 9.56919 17.3166 9.69166L9.06664 18.1917C9.00475 18.2631 8.92042 18.3114 8.82749 18.3285C8.73455 18.3457 8.63854 18.3308 8.5552 18.2862C8.47186 18.2417 8.40615 18.1701 8.36886 18.0832C8.33157 17.9964 8.32491 17.8995 8.34997 17.8083L9.94997 12.7917C9.99715 12.6654 10.013 12.5296 9.99615 12.3958C9.9793 12.2621 9.93026 12.1344 9.85323 12.0238C9.77621 11.9132 9.6735 11.8229 9.55391 11.7607C9.43433 11.6985 9.30144 11.6662 9.16664 11.6667H3.33331Z"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="text-[30px] font-extrabold text-brand-yellow leading-tight">30 MT</div>
+                    <div class="text-base text-[#D1DDF3] font-normal">Peak Capacity/Mo</div>
+                </div>
+
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-yellow/15 flex items-center justify-center mb-4 border border-brand-yellow/20">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.3334 17.5V15.8333C13.3334 14.9493 12.9822 14.1014 12.357 13.4763C11.7319 12.8512 10.8841 12.5 10 12.5H5.00002C4.11597 12.5 3.26812 12.8512 2.643 13.4763C2.01788 14.1014 1.66669 14.9493 1.66669 15.8333V17.5"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M7.50002 9.16667C9.34097 9.16667 10.8334 7.67428 10.8334 5.83333C10.8334 3.99238 9.34097 2.5 7.50002 2.5C5.65907 2.5 4.16669 3.99238 4.16669 5.83333C4.16669 7.67428 5.65907 9.16667 7.50002 9.16667Z"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M18.3333 17.5V15.8333C18.3328 15.0948 18.0869 14.3773 17.6345 13.7936C17.182 13.2099 16.5484 12.793 15.8333 12.6083"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M13.3333 2.60834C14.0503 2.79192 14.6858 3.20892 15.1397 3.7936C15.5935 4.37827 15.8398 5.09736 15.8398 5.8375C15.8398 6.57765 15.5935 7.29674 15.1397 7.88141C14.6858 8.46609 14.0503 8.88309 13.3333 9.06667"
+                                stroke="#F5B800" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="text-[30px] font-extrabold text-brand-yellow leading-tight">100+</div>
+                    <div class="text-base text-[#D1DDF3] font-normal">Team Members</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Manufacturing Excellence section end here -->
+
+    <!-- Pipeline section start here -->
+    <section class="w-full py-20 px-4 bg-[linear-gradient(180deg,rgba(238,243,252,0.1)_0%,#DCE9F8_100%)] sans">
+        <div class="max-w-7xl mx-auto md:px-8 px-0">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div class="max-w-xl">
+                    <span class="text-sm font-semibold text-[#1B55C5] tracking-[1.4px] uppercase mb-2 block">
+                        Pipeline
+                    </span>
+                    <h2 class="text-[32px] font-extrabold text-[#0A2342] leading-[38.4px] tracking-[-0.64px]">
+                        Products Under Development
+                    </h2>
+                </div>
+                <p class="text-sm font-regular text-[#62748E] leading-[20px] max-w-[280px] md:text-right">
+                    Expanding our portfolio to serve more therapeutic categories
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div
+                    class="bg-white p-6 rounded-xl border-[0.8px] border-dashed border-[#E2E8F0] shadow-sm min-h-[205px] flex flex-col items-start transition-all hover:shadow-md">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFBEB] border-[0.8px] border-[#FEE685] mb-4">
+                        <svg class="w-3.5 h-3.5 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-[#D97706]">Coming Soon</span>
+                    </div>
+
+                    <h3 class="text-[17px] font-bold text-[#0A2342] leading-[25.5px] mb-2">Gliclazide</h3>
+
+                    <span
+                        class="px-3  border border-[#1B55C533] bg-[#E8EEF9] text-[#1B55C5] text-sm font-medium rounded-full mb-4">
+                        Antidiabetic
+                    </span>
+
+                    <p class="text-sm font-regular text-[#62748E] leading-[22.75px]">
+                        Sulfonylurea antidiabetic agent for Type 2 diabetes management
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl border-[0.8px] border-dashed border-[#E2E8F0] shadow-sm min-h-[205px] flex flex-col items-start transition-all hover:shadow-md">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFBEB] border-[0.8px] border-[#FEE685] mb-4">
+                        <svg class="w-3.5 h-3.5 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-[#D97706]">Coming Soon</span>
+                    </div>
+                    <h3 class="text-[17px] font-bold text-[#0A2342] leading-[25.5px] mb-2">Ofloxacin</h3>
+                    <span
+                        class="px-3  border border-[#1B55C533] bg-[#E8EEF9] text-[#1B55C5] text-sm font-medium rounded-full mb-4">
+                        Antibiotic
+                    </span>
+                    <p class="text-sm font-regular text-[#62748E] leading-[22.75px]">
+                        Broad-spectrum fluoroquinolone antibiotic for bacterial infections
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl border-[0.8px] border-dashed border-[#E2E8F0] shadow-sm min-h-[205px] flex flex-col items-start transition-all hover:shadow-md">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFBEB] border-[0.8px] border-[#FEE685] mb-4">
+                        <svg class="w-3.5 h-3.5 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-[#D97706]">Coming Soon</span>
+                    </div>
+                    <h3 class="text-[17px] font-bold text-[#0A2342] leading-[25.5px] mb-2">Vildagliptin</h3>
+                    <span
+                        class="px-3  border border-[#1B55C533] bg-[#E8EEF9] text-[#1B55C5] text-sm font-medium rounded-full mb-4">
+                        Antidiabetic
+                    </span>
+                    <p class="text-sm font-regular text-[#62748E] leading-[22.75px]">
+                        DPP-4 inhibitor for Type 2 diabetes glycemic control
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Pipeline section end here -->
+
+    <!-- Serving 21 Countries Across 5 Continents section start here -->
+    <section class="relative w-full py-20 px-4 bg-white overflow-hidden sans"
+        style="background-image: url(./assests/img/banner/Global-Presence-bg.png);">
+        <div
+            class="absolute inset-0 opacity-40 pointer-events-none bg-[radial-gradient(#CCDAF3_1px,transparent_1px)] [background-size:24px_24px]">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto md:px-28 px-0 ">
+
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-[#1B55C5] tracking-[1.4px] uppercase mb-3 block">
+                    Global Presence
+                </span>
+                <h2
+                    class="text-[32px] md:text-[40px]  font-extrabold text-[#0A2342] leading-[46px] tracking-[-0.8px] mb-4">
+                    Serving 21 Countries Across 5 Continents
+                </h2>
+                <p class="max-w-2xl mx-auto text-base font-normal text-[#555555] leading-[24px]">
+                    From Southeast Asia to the Americas, Kodel Life APIs power pharmaceutical manufacturing worldwide.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌍</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Africa</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">5
+                            markets</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Kenya</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Tanzania</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Nigeria</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Ethiopia</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">South
+                            Africa</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌎</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Americas</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">2
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">USA</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Brazil</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌏</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Middle East</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">2
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">UAE</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">South-East
+                            Asia</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌍</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Europe & CIS</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">3
+                            markets</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Russia</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Ukraine</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Germany</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌎</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">South Asia</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">4
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Sri
+                            Lanka</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Bangladesh</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Nepal</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Pakistan</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌏</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">South-East Asia</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">5
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Thailand</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Vietnam</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Myanmar</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Malaysia</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Philippines</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Serving 21 Countries Across 5 Continents section end here -->
+
+    <!-- Quality Commitment section start here -->
+    <section class="px-6 bg-brand-dark py-24 relative overflow-hidden font-sans">
+        <div class="absolute inset-0 pointer-events-none">
+            <img src="./assests/img/banner/QualityCommitment.png" alt="" class="w-full h-full object-cover">
+        </div>
+
+        <div class="max-w-7xl mx-auto md:px-8 px-0 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-6">
+                    <span
+                        class="text-sm font-semibold leading-5 tracking-[1.4px] uppercase text-brand-yellow block mb-4">
+                        Quality Commitment
+                    </span>
+                    <h2
+                        class="text-[32px] md:text-[40px]  font-extrabold leading-[46px] tracking-[-0.8px] text-white mb-6">
+                        Built on Globally Recognized Quality Standards
+                    </h2>
+                    <p class="text-base font-normal leading-6 text-[#D1DDF3] mb-10">
+                        Every batch we produce is manufactured under ISO 9001:2015 certified processes with full
+                        traceability, rigorous analytical testing, and FDA-compliant documentation — ensuring our APIs
+                        meet international regulatory requirements.
+                    </p>
+
+                    <button
+                        class="bg-brand-yellow hover:brightness-110 text-brand-dark font-semibold py-3 px-6 rounded-full flex items-center gap-2 text-sm transition-all">
+                        View Our Certifications <span>→</span>
+                    </button>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col md:flex-row gap-6">
+
+                    <div class="flex-1 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                        <div
+                            class="w-10 h-10 bg-brand-yellow/15 border border-brand-yellow/20 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M12 15l-2 5L9 9l11-1-5 2 5 8-7-4z" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="text-[18px] font-bold leading-7 text-brand-yellow mb-1">ISO 9001:2015</h3>
+                        <p class="text-sm font-normal leading-4 text-[#AAAAAA] mb-4">International Organization for
+                            Standardization</p>
+                        <p class="text-base font-normal leading-6 text-[#D1DDF3]">
+                            Quality Management System certified to international standards
+                        </p>
+                    </div>
+
+                    <div class="flex-1 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
+                        <div
+                            class="w-10 h-10 bg-brand-yellow/15 border border-brand-yellow/20 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="text-[18px] font-bold leading-7 text-brand-yellow mb-1">FDA Compliant</h3>
+                        <p class="text-sm font-normal leading-4 text-[#AAAAAA] mb-4">U.S. Food & Drug Administration
+                        </p>
+                        <p class="text-base font-normal leading-6 text-[#D1DDF3]">
+                            Manufacturing processes compliant with FDA regulations
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Quality Commitment section end here -->
+
+    <!-- Insights & Updates section start here -->
+    <section class="w-full py-20 px-4 bg-[#F8FAFC] sans">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-sm font-semibold text-[#1B55C5] tracking-[1.4px] uppercase mb-2 block">
+                        Insights & Updates
+                    </span>
+                    <h2
+                        class="text-[32px] md:text-[40px]  font-extrabold text-[#0A2342] leading-[46px] tracking-[-0.8px]">
+                        Latest from Our Blog
+                    </h2>
+                </div>
+                <a href="Blogs.html" class="text-base font-semibold text-[#1B55C5] flex items-center gap-2 hover:underline">
+                    View All Posts
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <article
+                    class="bg-white rounded-xl overflow-hidden border-t-[0.8px] border-black/5 shadow-[0px_4px_10px_0px_#0000001A] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300">
+                    <div class="relative h-[220px] overflow-hidden">
+                        <img src="./assests/img/blog/1.png" alt="Blog Title" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-[#0A2342CC] text-white text-sm font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                            Market Insights
+                        </span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-sm text-[#717171] mb-3">
+                            <span>March 15, 2026</span>
+                            <span class="w-1 h-1 bg-[#717171] rounded-full"></span>
+                            <span>5 min read</span>
+                        </div>
+
+                        <h3 class="text-[18px] font-bold text-[#0A2342] leading-[26px] mb-3 line-clamp-2">
+                            The Growing Global Demand for Loop Diuretics: What Pharma Buyers Need to
+                        </h3>
+
+                        <p class="text-sm font-regular text-[#717171] leading-[22px] mb-6 line-clamp-3">
+                            Loop diuretics like Furosemide continue to see rising global demand driven by aging
+                            populations and increased hypertension awareness.
+                        </p>
+
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-sm font-semibold text-[#717171]">By Dr. Kalpesh Tilava</span>
+                            <a href="#" class="text-sm font-bold text-[#1B55C5] flex items-center gap-1 group">
+                                Read More
+                                <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="bg-white rounded-xl overflow-hidden border-t-[0.8px] border-black/5 shadow-[0px_4px_10px_0px_#0000001A] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300">
+                    <div class="relative h-[220px] overflow-hidden">
+                        <img src="./assests/img/blog/2.png" alt="Blog Title" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-[#0A2342CC] text-white text-sm font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                            Market Insights
+                        </span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-sm text-[#717171] mb-3">
+                            <span>March 15, 2026</span>
+                            <span class="w-1 h-1 bg-[#717171] rounded-full"></span>
+                            <span>5 min read</span>
+                        </div>
+
+                        <h3 class="text-[18px] font-bold text-[#0A2342] leading-[26px] mb-3 line-clamp-2">
+                            The Growing Global Demand for Loop Diuretics: What Pharma Buyers Need to
+                        </h3>
+
+                        <p class="text-sm font-regular text-[#717171] leading-[22px] mb-6 line-clamp-3">
+                            Loop diuretics like Furosemide continue to see rising global demand driven by aging
+                            populations and increased hypertension awareness.
+                        </p>
+
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-sm font-semibold text-[#717171]">By Dr. Kalpesh Tilava</span>
+                            <a href="#" class="text-sm font-bold text-[#1B55C5] flex items-center gap-1 group">
+                                Read More
+                                <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="bg-white rounded-xl overflow-hidden border-t-[0.8px] border-black/5 shadow-[0px_4px_10px_0px_#0000001A] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300">
+                    <div class="relative h-[220px] overflow-hidden">
+                        <img src="./assests/img/blog/3.png" alt="Blog Title" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-[#0A2342CC] text-white text-sm font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                            Market Insights
+                        </span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-sm text-[#717171] mb-3">
+                            <span>March 15, 2026</span>
+                            <span class="w-1 h-1 bg-[#717171] rounded-full"></span>
+                            <span>5 min read</span>
+                        </div>
+
+                        <h3 class="text-[18px] font-bold text-[#0A2342] leading-[26px] mb-3 line-clamp-2">
+                            The Growing Global Demand for Loop Diuretics: What Pharma Buyers Need to
+                        </h3>
+
+                        <p class="text-sm font-regular text-[#717171] leading-[22px] mb-6 line-clamp-3">
+                            Loop diuretics like Furosemide continue to see rising global demand driven by aging
+                            populations and increased hypertension awareness.
+                        </p>
+
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-sm font-semibold text-[#717171]">By Dr. Kalpesh Tilava</span>
+                            <a href="#" class="text-sm font-bold text-[#1B55C5] flex items-center gap-1 group">
+                                Read More
+                                <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- Insights & Updates section end here -->
+
+    <!-- Get all the answer of your question section start here -->
+    <section class="max-w-[1100px] mx-auto py-20 px-4 font-['Plus_Jakarta_Sans']">
+        <div class="text-center mb-12">
+            <span class="text-sm font-semibold leading-5 tracking-[1.4px] uppercase text-[#1B55C5] block mb-3">
+                Get All The Answer Of Your Question
+            </span>
+            <h2 class="text-[32px] md:text-[40px]  font-extrabold leading-[46px] tracking-[-0.8px] text-[#0A2342]">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <div class="space-y-4" id="faq-container">
+
+            <div
+                class="faq-item active bg-white border border-[#1B55C5] rounded-md p-[18px] py-[14px] shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)] transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#103376] text-left transition-colors duration-300">
+                        What APIs does Kodel Life currently manufacture?
+                    </h3>
+                    <span class="faq-icon text-[#1B55C5] font-bold text-2xl">−</span>
+                </button>
+                <div class="faq-content mt-3 overflow-hidden transition-all duration-300 max-h-[500px]">
+                    <p class="text-base font-normal leading-6 text-[#45556C]">
+                        We currently manufacture a range of high-quality Active Pharmaceutical Ingredients including
+                        Gliclazide, Ofloxacin, and Vildagliptin.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        What is your monthly production capacity?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Our current peak production capacity is 30 MT per month, allowing us to serve large-scale
+                        pharmaceutical needs globally.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        Are your manufacturing facilities certified?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Yes, our facilities are ISO 9001:2015 certified and adhere to rigorous FDA-compliant
+                        manufacturing standards.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        Which countries do you currently export to?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Yes, our facilities are ISO 9001:2015 certified and adhere to rigorous FDA-compliant
+                        manufacturing standards.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        How can I request a sample or place an enquiry?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Yes, our facilities are ISO 9001:2015 certified and adhere to rigorous FDA-compliant
+                        manufacturing standards.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Get all the answer of your question section end here -->
+
+    <!-- cta section start here -->
+    <section class="relative w-full py-16 px-4 overflow-hidden sans">
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,#0A2342_0%,#0D3B5E_50%,#1B55C5_100%)] opacity-95"></div>
+
+        <div class="absolute inset-0  mix-blend-overlay">
+            <img src="./assests/img/banner/home-cta-bg.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto text-center">
+            <span class="text-sm font-semibold text-brand-yellow tracking-[1.4px] uppercase mb-4 block">
+                Partner With Us
+            </span>
+
+            <h2 class="text-[32px] md:text-[44px] font-extrabold text-white leading-tight mb-6 max-w-4xl mx-auto">
+                Looking for a Reliable API Manufacturing Partner?
+            </h2>
+
+            <p class="text-base md:text-[18px] font-normal text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+                Kodel Life delivers ISO 9001:2015 certified APIs to 21 countries. Reach out to discuss your
+                requirements.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="Contact.html"
+                    class="px-10 py-4 bg-brand-yellow text-[#0A2342] font-bold text-base rounded-full hover:bg-[#E5AB00] transition-colors shadow-lg shadow-black/10">
+                    Enquire Now
+                </a>
+
+                <a href="product.html"
+                    class="px-10 py-4 border-[1.5px] border-white/40 text-white font-bold text-base rounded-full hover:bg-white/10 transition-all backdrop-blur-sm">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- cta section end here -->
+
+    <!-- footer section start here -->
+    <footer class="bg-[#051127] text-white pt-20 pb-6 font-sans">
+        <div class="max-w-full mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-8">
+                <div class="lg:col-span-3">
+                    <img src="./assests/img/logo/logo.svg" alt="Kodel Logo" class="h-12 mb-8">
+                    <p class="text-base leading-6 text-[#D1DDF3] mb-8">
+                        Kodel Life is a premier API manufacturer and exporter, delivering precision-crafted
+                        pharmaceutical ingredients to 21 countries across Asia, Africa, Europe, and the Americas.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/kodellifesciencellp?mibextid=ZbWKwL"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/face.svg" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/kodellifesciencellp/profilecard/?igsh=MTNpMDV0YjVkMnRnaw%3D%3D"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/insta.svg" alt="">
+                        </a>
+                        <a href="https://x.com/kodellife?t=4z0s-VkeyUoVu6etTekQHg&s=09"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/twitter.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                       <li><a href="about.html" class="hover:text-brand-yellow transition-colors">About Us</a></li>
+                        <li><a href="product.html" class="hover:text-brand-yellow transition-colors">Products</a></li>
+                        <li><a href="Contact.html" class="hover:text-brand-yellow transition-colors">Contact</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-yellow transition-colors">Blogs & Insights</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Our APIs</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="furosemide.html" class="hover:text-brand-yellow transition-colors">Furosemide</a></li>
+                        <li><a href="hydrochlorothiazide.html" class="hover:text-brand-yellow transition-colors">Hydrochlorothiazide</a></li>
+                        <li><a href="metoprolol-succinate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Succinate</a></li>
+                        <li><a href="metoprolol-tartrate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Tartrate</a></li>
+                        <li><a href="piroxicam.html" class="hover:text-brand-yellow transition-colors">Piroxicam</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="api-manufacturing.html" class="hover:text-brand-yellow transition-colors">API Manufacturing</a></li>
+                        <li><a href="intermediates-supply.html" class="hover:text-brand-yellow transition-colors">Intermediates Supply</a></li>
+                        <li><a href="custom-quantities.html" class="hover:text-brand-yellow transition-colors">Custom Quantities</a></li>
+                        <li><a href="request-a-sample.html" class="hover:text-brand-yellow transition-colors">Request a Sample</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-phone.svg" alt="phone">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">+91 95375 22225</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-mail.svg" alt="maifooter-mail"></span>
+                            <span class="text-base text-[#D1DDF3]">info@kodellife.com</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-map.svg" alt="location">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">Survey No. 133/6, Pipaliya, Morbi, Gujarat
+                                363660</span>
+                        </div>
+                    </div>
+
+                    <h4 class="text-base font-bold mb-4">Key Markets</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Thailand</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Vietnam</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">UAE</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">USA</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Kenya</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Bangladesh</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Malaysia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#D1DDF3]">
+                <p>© 2026 Kodel Life. All rights reserved. Developed by <a href="https://theuniqueitsolution.com/"
+                        class="text-white hover:underline">Unique IT Solutions</a></p>
+                <p class="italic opacity-80">"Precision Chemistry. Global Reach."</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end here -->
+
+    <script src="./assests/js/script.js"></script>
+</body>
+
+</html>

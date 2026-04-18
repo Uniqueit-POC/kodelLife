@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- start menu and bar  -->
+    <header class="bg-[#051127] px-8 py-4 flex items-center justify-between font-sans relative">
+
+        <div class="flex items-center space-x-2 z-50">
+            <div class="flex flex-col leading-none">
+                <img src="./assests/img/logo/logo.svg" alt="">
+            </div>
+        </div>
+
+         <nav class="hidden lg:flex items-center space-x-8 text-[#C7C7C7] font-medium text-base leading-normal">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-gray-300 transition focus:outline-none">
+                    <span>Products</span>
+                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                    <a href="product.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">API</a>
+                    <a href="intermediate-api.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Intermediate API</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="hover:text-gray-300 transition">About</a>
+            <a href="blogs.html" class="hover:text-gray-300 transition">Blogs</a>
+            <a href="contact.html" class="hover:text-gray-300 transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <a href="Contact.html"
+                class="hidden sm:flex bg-[#F5B800] hover:bg-[#e6ae00] text-[#0A2342] px-5 py-2 rounded-full font-semibold items-center space-x-2 transition-all text-base">
+                <i class="fa-solid fa-flask"></i>
+                <span>Request a Sample</span>
+            </a>
+
+            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl focus:outline-none z-50">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+       <div id="mobile-menu"
+            class="fixed inset-0 bg-[#0A2342] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col items-center justify-center space-y-8 text-xl text-white">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+            <button onclick="toggleMobileDropdown()" class="flex items-center space-x-2">
+                <span>Products</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div id="mobile-dropdown" class="hidden flex-col items-center space-y-4 bg-[#00153d] w-full py-4 text-base">
+                <a href="product.html" class="text-gray-300">API</a>
+                <a href="intermediate-api.html" class="text-gray-300">Intermediate API</a>
+            </div>
+            <a href="about.html" class="text-[#F5B800]">About</a>
+            <a href="blogs.html" class="text-gray-300">Blogs</a>
+            <a href="contact.html" class="text-gray-300">Contact</a>
+            <a href="contact.html" class="bg-[#F5B800] text-[#0A2342] px-8 py-3 rounded-full font-bold">Request a Sample</a>
+        </div>
+
+    </header>
+    <!-- end menu and bar  -->
+
+    <!-- hero banner start here -->
+    <section
+        class="relative w-full min-h-[460px] flex items-center overflow-hidden font-['Plus_Jakarta_Sans'] bg-[#050F1F]">
+
+        <div class="absolute inset-0 z-20">
+            <img src="./assests/img/banner/product-banner.png" alt="Background Texture"
+                class="w-full h-full object-cover">
+        </div>
+
+        <div class="absolute left-0 top-0 w-full lg:w-3/4 h-full z-10 pointer-events-none">
+            <div class="relative w-full h-full">
+                <img src="./assests/img/banner/about-banner1.png" alt="Manufacturing Detail"
+                    class="w-full h-full object-cover opacity-50:opacity-80"
+                    style="mask-image: linear-gradient(to right, black 40%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);">
+            </div>
+        </div>
+
+        <div
+            class="absolute inset-0 z-0 bg-[linear-gradient(135deg,rgba(5,15,31,0.85)_0%,rgba(10,35,66,0.9)_50%,rgba(13,59,94,0.95)_100%)] pointer-events-none">
+        </div>
+
+        <div class="relative z-30 max-w-7xl mx-auto px-4 w-full text-center">
+
+            <span
+                class="inline-block text-[#F5B800] text-[14px] font-semibold leading-[20px] tracking-[1.4px] uppercase mb-4">
+                Our Product Portfolio
+            </span>
+
+            <h1
+                class="text-white text-[32px] md:text-[46px] font-extrabold leading-[40px] md:leading-[60px] tracking-normal mb-6 max-w-4xl mx-auto">
+                Pharmaceutical APIs & Intermediates
+            </h1>
+
+            <p class="text-[#E8EEF9] text-[16px] md:text-[18px] font-normal leading-[24px] max-w-2xl mx-auto mb-10">
+                Kodel Life is a dedicated pharmaceutical API manufacturer and exporter, delivering ISO-certified,
+                globally compliant active pharmaceutical ingredients to 21 countries across five continents.
+            </p>
+        </div>
+
+        <div
+            class="absolute right-0 bottom-0 w-1/3 h-1/2 bg-blue-400/10 blur-[120px] rounded-full z-20 pointer-events-none">
+        </div>
+    </section>
+    <!-- hero banner end here -->
+
+    <!-- Our Portfolio section start here -->
+    <section class="py-6 bg-white font-['Plus_Jakarta_Sans']">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                <div id="category-tabs" class="flex p-1 bg-[#F1F5F9] rounded-[14px] w-fit">
+                    <button data-category="api"
+                        class="tab-btn active flex items-center gap-3 px-6 py-3 bg-[#0A2342] text-white rounded-[11px] shadow-lg transition-all">
+                        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                        <span class="font-bold text-[15px]">APIs</span>
+                        <span id="count-api" class="bg-white/20 px-2 py-0.5 rounded-full text-[11px]">0</span>
+                    </button>
+
+                    <button data-category="intermediate"
+                        class="tab-btn flex items-center gap-3 px-6 py-3 text-[#64748B] hover:text-[#0A2342] transition-all">
+                        <svg class="w-5 h-5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                        </svg>
+                        <span class="font-bold text-[15px]">Intermediates</span>
+                        <span id="count-intermediate"
+                            class="bg-[#CBD5E1] text-white px-2 py-0.5 rounded-full text-[11px]">0</span>
+                    </button>
+                </div>
+
+                <div class="relative w-full md:w-80">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="product-search" placeholder="Search products..."
+                        class="w-full pl-12 pr-4 py-3 bg-white border border-[#E2E8F0] rounded-[12px] text-sm focus:outline-none focus:ring-2 focus:ring-[#1B55C5]/20 transition-all">
+                </div>
+            </div>
+
+            <div id="class-filters" class="flex flex-wrap items-center gap-3">
+                <button data-class="all" id="all-filter-btn"
+                    class="filter-btn px-6 py-2.5 bg-[#1B55C5] text-white rounded-full text-sm font-semibold transition-all">All</button>
+                <div id="dynamic-sub-buttons" class="flex flex-wrap gap-3"></div>
+            </div>
+
+            <div class="w-full h-[1px] bg-[#F1F5F9] mt-8"></div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6">
+
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <h2 class="text-[32px] md:text-[40px]  font-extrabold leading-[46px] tracking-[-0.8px] text-brand-dark">
+                    API Products We Manufacture
+                </h2>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="product-card bg-white rounded-xl border border-gray-100 overflow-hidden flex flex-col group"
+                data-category="api" data-class="diuretics">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/b82e24e3c5d0c9fc2895dd7cc32b9f121080af5f.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#EFF6FF] border border-[#BEDBFF] rounded-full">
+                        <span class="text-sm font-semibold text-[#1447E6] leading-4">Diuretics</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <a href="product-details.html"
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-xl border border-gray-100 overflow-hidden flex flex-col group"
+                data-category="api" data-class="cardiovascular">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/9beed95d5a8513010ce3117b39024b9397bb3972.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#EFF6FF] border border-[#BEDBFF] rounded-full">
+                        <span class="text-sm font-semibold text-[#1447E6] leading-4">Diuretics</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <a href="product-details.html"
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-xl border border-gray-100 overflow-hidden flex flex-col group"
+                data-category="api" data-class="nsaid">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/f3c87ad59d7f5ead3a6ae92d41806288f1367440.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#FFF1F2] border border-[#FFCCD3] rounded-full">
+                        <span class="text-sm font-semibold text-[#C70036] leading-4">Cardiovascular Care</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <a href="product-details.html"
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-xl border border-gray-100 overflow-hidden flex flex-col group"
+                data-category="intermediate" data-class="intermediate-chem">
+                <div
+                    class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                    <div class="flex justify-center items-center h-full">
+                        <img src="./assests/img/home/portfolio/9beed95d5a8513010ce3117b39024b9397bb3972.png"
+                            alt="Furosemide" class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 px-2 bg-[#EFF6FF] border border-[#BEDBFF] rounded-full">
+                        <span class="text-sm font-semibold text-[#1447E6] leading-4">Diuretics</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex flex-col gap-3">
+                    <p class="font-mono text-sm text-brand-lightGray">
+                        C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                    </p>
+
+                    <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                        Furosemide
+                    </h3>
+
+                    <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                        Furosemide is a potent loop diuretic used in the treatment of edema associated with congestive
+                        heart failure.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                            <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                        </div>
+
+                        <a href="product-details.html"
+                            class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                            Enquire Now <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-xl border border-gray-100 overflow-hidden flex flex-col group"
+                data-category="intermediate" data-class="intermediate-chem">
+                <div class="product-card bg-white rounded-xl border border-gray-100 overflow-hidden flex flex-col group"
+                    data-category="intermediate" data-class="intermediate-chem">
+                    <div
+                        class="bg-gradient-to-r from-[#0A2342] via-[#0D3B5E] to-[#1B55C5] p-8 h-[200px] flex flex-col justify-between relative">
+                        <div class="flex justify-center items-center h-full">
+                            <img src="./assests/img/home/portfolio/9beed95d5a8513010ce3117b39024b9397bb3972.png"
+                                alt="Furosemide"
+                                class="max-h-full opacity-90 transition-transform group-hover:scale-105">
+                        </div>
+
+                        <div class="absolute bottom-4 left-4 px-2 bg-[#EFF6FF] border border-[#BEDBFF] rounded-full">
+                            <span class="text-sm font-semibold text-[#1447E6] leading-4">Diuretics</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex flex-col gap-3">
+                        <p class="font-mono text-sm text-brand-lightGray">
+                            C<sub>12</sub>H<sub>11</sub>ClN<sub>2</sub>O<sub>5</sub>S · CAS 54-31-9
+                        </p>
+
+                        <h3 class="text-[19.2px] font-bold leading-[28.8px] text-brand-dark">
+                            Furosemide
+                        </h3>
+
+                        <p class="text-base font-normal leading-6 text-brand-gray line-clamp-2">
+                            Furosemide is a potent loop diuretic used in the treatment of edema associated with
+                            congestive
+                            heart failure.
+                        </p>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <p class="text-sm font-bold text-brand-dark leading-5">30 MT/Month</p>
+                                <p class="text-sm text-slate-400 leading-4">Production Capacity</p>
+                            </div>
+
+                            <button
+                                class="bg-brand-yellow hover:brightness-110 text-brand-dark font-bold py-2.5 px-5 rounded-full flex items-center gap-2 text-sm transition-all active:scale-95">
+                                Enquire Now <span>→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Our Portfolio section end here -->
+
+    <!-- Pipeline section start here -->
+    <section class="w-full py-20 px-4 bg-[linear-gradient(180deg,rgba(238,243,252,0.1)_0%,#DCE9F8_100%)] sans">
+        <div class="max-w-7xl mx-auto md:px-8 px-0">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div class="max-w-xl">
+                    <span class="text-sm font-semibold text-[#1B55C5] tracking-[1.4px] uppercase mb-2 block">
+                        Pipeline
+                    </span>
+                    <h2 class="text-[32px] font-extrabold text-[#0A2342] leading-[38.4px] tracking-[-0.64px]">
+                        Products Under Development
+                    </h2>
+                </div>
+                <p class="text-sm font-regular text-[#62748E] leading-[20px] max-w-[280px] md:text-right">
+                    Expanding our portfolio to serve more therapeutic categories
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div
+                    class="bg-white p-6 rounded-xl border-[0.8px] border-dashed border-[#E2E8F0] shadow-sm min-h-[205px] flex flex-col items-start transition-all hover:shadow-md">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFBEB] border-[0.8px] border-[#FEE685] mb-4">
+                        <svg class="w-3.5 h-3.5 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-[#D97706]">Coming Soon</span>
+                    </div>
+
+                    <h3 class="text-[17px] font-bold text-[#0A2342] leading-[25.5px] mb-2">Gliclazide</h3>
+
+                    <span
+                        class="px-3  border border-[#1B55C533] bg-[#E8EEF9] text-[#1B55C5] text-sm font-medium rounded-full mb-4">
+                        Antidiabetic
+                    </span>
+
+                    <p class="text-sm font-regular text-[#62748E] leading-[22.75px]">
+                        Sulfonylurea antidiabetic agent for Type 2 diabetes management
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl border-[0.8px] border-dashed border-[#E2E8F0] shadow-sm min-h-[205px] flex flex-col items-start transition-all hover:shadow-md">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFBEB] border-[0.8px] border-[#FEE685] mb-4">
+                        <svg class="w-3.5 h-3.5 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-[#D97706]">Coming Soon</span>
+                    </div>
+                    <h3 class="text-[17px] font-bold text-[#0A2342] leading-[25.5px] mb-2">Ofloxacin</h3>
+                    <span
+                        class="px-3  border border-[#1B55C533] bg-[#E8EEF9] text-[#1B55C5] text-sm font-medium rounded-full mb-4">
+                        Antibiotic
+                    </span>
+                    <p class="text-sm font-regular text-[#62748E] leading-[22.75px]">
+                        Broad-spectrum fluoroquinolone antibiotic for bacterial infections
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl border-[0.8px] border-dashed border-[#E2E8F0] shadow-sm min-h-[205px] flex flex-col items-start transition-all hover:shadow-md">
+                    <div
+                        class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFFBEB] border-[0.8px] border-[#FEE685] mb-4">
+                        <svg class="w-3.5 h-3.5 text-[#D97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-[#D97706]">Coming Soon</span>
+                    </div>
+                    <h3 class="text-[17px] font-bold text-[#0A2342] leading-[25.5px] mb-2">Vildagliptin</h3>
+                    <span
+                        class="px-3  border border-[#1B55C533] bg-[#E8EEF9] text-[#1B55C5] text-sm font-medium rounded-full mb-4">
+                        Antidiabetic
+                    </span>
+                    <p class="text-sm font-regular text-[#62748E] leading-[22.75px]">
+                        DPP-4 inhibitor for Type 2 diabetes glycemic control
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Pipeline section end here -->
+
+    <!-- Serving 21 Countries Across 5 Continents section start here -->
+    <section class="relative w-full py-20 px-4 bg-white overflow-hidden sans"
+        style="background-image: url(./assests/img/banner/Global-Presence-bg.png);">
+        <div
+            class="absolute inset-0 opacity-40 pointer-events-none bg-[radial-gradient(#CCDAF3_1px,transparent_1px)] [background-size:24px_24px]">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto md:px-28 px-0 ">
+
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-[#1B55C5] tracking-[1.4px] uppercase mb-3 block">
+                    Global Presence
+                </span>
+                <h2 class="text-[32px] md:text-[40px]  font-extrabold text-[#0A2342] leading-[46px] tracking-[-0.8px] mb-4">
+                    Serving 21 Countries Across 5 Continents
+                </h2>
+                <p class="max-w-2xl mx-auto text-base font-normal text-[#555555] leading-[24px]">
+                    From Southeast Asia to the Americas, Kodel Life APIs power pharmaceutical manufacturing worldwide.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌍</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Africa</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">5
+                            markets</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Kenya</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Tanzania</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Nigeria</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Ethiopia</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">South
+                            Africa</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌎</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Americas</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">2
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">USA</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Brazil</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌏</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Middle East</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">2
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">UAE</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">South-East
+                            Asia</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌍</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">Europe & CIS</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">3
+                            markets</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Russia</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Ukraine</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Germany</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌎</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">South Asia</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">4
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Sri
+                            Lanka</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Bangladesh</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Nepal</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Pakistan</span>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full min-h-[156px] p-6 rounded-xl bg-[#BFCCE847] border border-[#CCDAF3] backdrop-blur-[4px] shadow-[0px_4px_12px_0px_#10214E1F]">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">🌏</span>
+                            <h3 class="text-[15px] font-bold text-[#0A2342]">South-East Asia</h3>
+                        </div>
+                        <span class="px-2 py-1 bg-[#009FCB] text-white text-sm font-semibold rounded-full">5
+                            markets</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Thailand</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Vietnam</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Myanmar</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Malaysia</span>
+                        <span
+                            class="px-2.5 py-1.5 bg-[#FDFDFD] border border-[#D1DDF3] rounded-full text-sm text-[#2F4058]">Philippines</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Serving 21 Countries Across 5 Continents section end here -->
+
+    <!-- Get all the answer of your question section start here -->
+    <section class="max-w-[1100px] mx-auto py-20 px-4 font-['Plus_Jakarta_Sans']">
+        <div class="text-center mb-12">
+            <span class="text-sm font-semibold leading-5 tracking-[1.4px] uppercase text-[#1B55C5] block mb-3">
+                Get All The Answer Of Your Question
+            </span>
+            <h2 class="text-[32px] md:text-[40px]  font-extrabold leading-[46px] tracking-[-0.8px] text-[#0A2342]">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <div class="space-y-4" id="faq-container">
+
+            <div
+                class="faq-item active bg-white border border-[#1B55C5] rounded-md p-[18px] py-[14px] shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)] transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#103376] text-left transition-colors duration-300">
+                        What APIs does Kodel Life currently manufacture?
+                    </h3>
+                    <span class="faq-icon text-[#1B55C5] font-bold text-2xl">−</span>
+                </button>
+                <div class="faq-content mt-3 overflow-hidden transition-all duration-300 max-h-[500px]">
+                    <p class="text-base font-normal leading-6 text-[#45556C]">
+                        We currently manufacture a range of high-quality Active Pharmaceutical Ingredients including
+                        Gliclazide, Ofloxacin, and Vildagliptin.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        What is your monthly production capacity?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Our current peak production capacity is 30 MT per month, allowing us to serve large-scale
+                        pharmaceutical needs globally.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        Are your manufacturing facilities certified?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Yes, our facilities are ISO 9001:2015 certified and adhere to rigorous FDA-compliant
+                        manufacturing standards.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        Which countries do you currently export to?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Yes, our facilities are ISO 9001:2015 certified and adhere to rigorous FDA-compliant
+                        manufacturing standards.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="faq-item bg-white border border-gray-200 rounded-md p-[18px] py-[14px] hover:border-[#1B55C5]/30 transition-all duration-300">
+                <button class="flex justify-between items-center w-full cursor-pointer focus:outline-none">
+                    <h3
+                        class="faq-title text-[18px] font-medium leading-6 text-[#383838] text-left transition-colors duration-300">
+                        How can I request a sample or place an enquiry?
+                    </h3>
+                    <span class="faq-icon text-gray-400 font-light text-2xl">+</span>
+                </button>
+                <div class="faq-content mt-0 overflow-hidden transition-all duration-300 max-h-0">
+                    <p class="text-base font-normal leading-6 text-[#45556C] pt-3">
+                        Yes, our facilities are ISO 9001:2015 certified and adhere to rigorous FDA-compliant
+                        manufacturing standards.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Get all the answer of your question section end here -->
+
+    <!-- cta section start here -->
+    <section class="relative w-full py-16 px-4 overflow-hidden sans">
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,#0A2342_0%,#0D3B5E_50%,#1B55C5_100%)] opacity-95"></div>
+
+        <div class="absolute inset-0  mix-blend-overlay">
+            <img src="./assests/img/banner/home-cta-bg.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto text-center">
+            <span class="text-sm font-semibold text-brand-yellow tracking-[1.4px] uppercase mb-4 block">
+                Partner With Us
+            </span>
+
+            <h2 class="text-[32px] md:text-[44px] font-extrabold text-white leading-tight mb-6 max-w-4xl mx-auto">
+                Looking for a Reliable API Manufacturing Partner?
+            </h2>
+
+            <p class="text-base md:text-[18px] font-normal text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+                Kodel Life delivers ISO 9001:2015 certified APIs to 21 countries. Reach out to discuss your
+                requirements.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="Contact.html"
+                    class="px-10 py-4 bg-brand-yellow text-[#0A2342] font-bold text-base rounded-full hover:bg-[#E5AB00] transition-colors shadow-lg shadow-black/10">
+                    Enquire Now
+                </a>
+
+                <a href="product.html"
+                    class="px-10 py-4 border-[1.5px] border-white/40 text-white font-bold text-base rounded-full hover:bg-white/10 transition-all backdrop-blur-sm">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- cta section end here -->
+
+    <!-- footer section start here -->
+    <footer class="bg-[#051127] text-white pt-20 pb-6 font-sans">
+        <div class="max-w-full mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-8">
+                <div class="lg:col-span-3">
+                    <img src="./assests/img/logo/logo.svg" alt="Kodel Logo" class="h-12 mb-8">
+                    <p class="text-base leading-6 text-[#D1DDF3] mb-8">
+                        Kodel Life is a premier API manufacturer and exporter, delivering precision-crafted
+                        pharmaceutical ingredients to 21 countries across Asia, Africa, Europe, and the Americas.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/kodellifesciencellp?mibextid=ZbWKwL"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/face.svg" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/kodellifesciencellp/profilecard/?igsh=MTNpMDV0YjVkMnRnaw%3D%3D"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/insta.svg" alt="">
+                        </a>
+                        <a href="https://x.com/kodellife?t=4z0s-VkeyUoVu6etTekQHg&s=09"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                              <img src="./assests/img/icon/twitter.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                       <li><a href="about.html" class="hover:text-brand-yellow transition-colors">About Us</a></li>
+                        <li><a href="product.html" class="hover:text-brand-yellow transition-colors">Products</a></li>
+                        <li><a href="Contact.html" class="hover:text-brand-yellow transition-colors">Contact</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-yellow transition-colors">Blogs & Insights</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Our APIs</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="furosemide.html" class="hover:text-brand-yellow transition-colors">Furosemide</a></li>
+                        <li><a href="hydrochlorothiazide.html" class="hover:text-brand-yellow transition-colors">Hydrochlorothiazide</a></li>
+                        <li><a href="metoprolol-succinate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Succinate</a></li>
+                        <li><a href="metoprolol-tartrate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Tartrate</a></li>
+                        <li><a href="piroxicam.html" class="hover:text-brand-yellow transition-colors">Piroxicam</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="api-manufacturing.html" class="hover:text-brand-yellow transition-colors">API Manufacturing</a></li>
+                        <li><a href="intermediates-supply.html" class="hover:text-brand-yellow transition-colors">Intermediates Supply</a></li>
+                        <li><a href="custom-quantities.html" class="hover:text-brand-yellow transition-colors">Custom Quantities</a></li>
+                        <li><a href="request-a-sample.html" class="hover:text-brand-yellow transition-colors">Request a Sample</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-phone.svg" alt="phone">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">+91 95375 22225</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-mail.svg" alt="maifooter-mail"></span>
+                            <span class="text-base text-[#D1DDF3]">info@kodellife.com</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-map.svg" alt="location">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">Survey No. 133/6, Pipaliya, Morbi, Gujarat
+                                363660</span>
+                        </div>
+                    </div>
+
+                    <h4 class="text-base font-bold mb-4">Key Markets</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Thailand</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Vietnam</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">UAE</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">USA</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Kenya</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Bangladesh</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Malaysia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#D1DDF3]">
+                <p>© 2026 Kodel Life. All rights reserved. Developed by <a href="https://theuniqueitsolution.com/"
+                        class="text-white hover:underline">Unique IT Solutions</a></p>
+                <p class="italic opacity-80">"Precision Chemistry. Global Reach."</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end here -->
+
+    <script src="./assests/js/script.js"></script>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const catBtns = document.querySelectorAll('.tab-btn');
+            const dynamicBox = document.getElementById('dynamic-sub-buttons');
+            const cards = document.querySelectorAll('.product-card');
+            const searchInput = document.getElementById('product-search');
+            const allBtn = document.getElementById('all-filter-btn');
+
+            let currentCat = 'api';
+            let currentClass = 'all';
+
+            const menuData = {
+                api: [
+                    { id: 'diuretics', label: 'Diuretics' },
+                    { id: 'cardiovascular', label: 'Cardiovascular Care' },
+                    { id: 'nsaid', label: 'NSAID & Analgesics' }
+                ],
+                intermediate: [
+                    { id: 'intermediate-chem', label: 'Chemical Intermediates' },
+                    { id: 'pharma-inter', label: 'Pharma Intermediates' }
+                ]
+            };
+
+            // 1. DYNAMIC COUNTING FUNCTION
+            function updateCounts() {
+                const apiTotal = document.querySelectorAll('.product-card[data-category="api"]').length;
+                const intermediateTotal = document.querySelectorAll('.product-card[data-category="intermediate"]').length;
+
+                document.getElementById('count-api').innerText = apiTotal;
+                document.getElementById('count-intermediate').innerText = intermediateTotal;
+            }
+
+            function updateSubMenu(type) {
+                dynamicBox.innerHTML = '';
+                menuData[type].forEach(item => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-btn px-6 py-2.5 bg-white border border-[#E2E8F0] text-[#475569] rounded-full text-sm font-semibold hover:border-[#1B55C5] transition-all';
+                    btn.dataset.class = item.id;
+                    btn.innerText = item.label;
+                    btn.onclick = () => handleFilterClick(btn);
+                    dynamicBox.appendChild(btn);
+                });
+            }
+
+            function handleFilterClick(btn) {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-[#1B55C5]', 'text-white');
+                    b.classList.add('bg-white', 'text-[#475569]', 'border-[#E2E8F0]');
+                });
+                btn.classList.add('bg-[#1B55C5]', 'text-white');
+                btn.classList.remove('bg-white', 'text-[#475569]', 'border-[#E2E8F0]');
+                currentClass = btn.dataset.class;
+                filterProducts();
+            }
+
+            function filterProducts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                cards.forEach(card => {
+                    const catMatch = card.dataset.category === currentCat;
+                    const classMatch = currentClass === 'all' || card.dataset.class === currentClass;
+                    const searchMatch = card.innerText.toLowerCase().includes(searchTerm);
+                    card.style.display = (catMatch && classMatch && searchMatch) ? 'flex' : 'none';
+                });
+            }
+
+            catBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update UI styles for Tabs
+                    catBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-[#0A2342]', 'text-white', 'shadow-lg');
+                        b.classList.add('text-[#64748B]');
+                        // Reset Badge colors for inactive
+                        const badge = b.querySelector('span[id^="count-"]');
+                        badge.className = "bg-[#CBD5E1] text-white px-2 py-0.5 rounded-full text-[11px]";
+                    });
+
+                    btn.classList.add('active', 'bg-[#0A2342]', 'text-white', 'shadow-lg');
+                    btn.classList.remove('text-[#64748B]');
+                    // Active Badge Style
+                    const activeBadge = btn.querySelector('span[id^="count-"]');
+                    activeBadge.className = "bg-white/20 px-2 py-0.5 rounded-full text-[11px]";
+
+                    currentCat = btn.dataset.category;
+                    updateSubMenu(currentCat);
+
+                    // Default to "All" when switching main categories
+                    handleFilterClick(allBtn);
+                });
+            });
+
+            // Initialize
+            allBtn.onclick = () => handleFilterClick(allBtn);
+            updateSubMenu('api');
+            updateCounts(); // Run the counter on load
+            filterProducts();
+            searchInput.addEventListener('input', filterProducts);
+        });
+    </script>
+</body>
+
+</html>

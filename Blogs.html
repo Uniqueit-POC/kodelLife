@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- start menu and bar  -->
+    <header class="bg-[#051127] px-8 py-4 flex items-center justify-between font-sans relative">
+
+        <div class="flex items-center space-x-2 z-50">
+            <div class="flex flex-col leading-none">
+                <img src="./assests/img/logo/logo.svg" alt="">
+            </div>
+        </div>
+
+         <nav class="hidden lg:flex items-center space-x-8 text-[#C7C7C7] font-medium text-base leading-normal">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-gray-300 transition focus:outline-none">
+                    <span>Products</span>
+                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                    <a href="product.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">API</a>
+                    <a href="intermediate-api.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Intermediate API</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="hover:text-gray-300 transition">About</a>
+            <a href="blogs.html" class="hover:text-gray-300 transition">Blogs</a>
+            <a href="contact.html" class="hover:text-gray-300 transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <a href="Contact.html"
+                class="hidden sm:flex bg-[#F5B800] hover:bg-[#e6ae00] text-[#0A2342] px-5 py-2 rounded-full font-semibold items-center space-x-2 transition-all text-base">
+                <i class="fa-solid fa-flask"></i>
+                <span>Request a Sample</span>
+            </a>
+
+            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl focus:outline-none z-50">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+       <div id="mobile-menu"
+            class="fixed inset-0 bg-[#0A2342] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col items-center justify-center space-y-8 text-xl text-white">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+            <button onclick="toggleMobileDropdown()" class="flex items-center space-x-2">
+                <span>Products</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div id="mobile-dropdown" class="hidden flex-col items-center space-y-4 bg-[#00153d] w-full py-4 text-base">
+                <a href="product.html" class="text-gray-300">API</a>
+                <a href="intermediate-api.html" class="text-gray-300">Intermediate API</a>
+            </div>
+            <a href="about.html" class="text-[#F5B800]">About</a>
+            <a href="blogs.html" class="text-gray-300">Blogs</a>
+            <a href="contact.html" class="text-gray-300">Contact</a>
+            <a href="contact.html" class="bg-[#F5B800] text-[#0A2342] px-8 py-3 rounded-full font-bold">Request a Sample</a>
+        </div>
+
+    </header>
+    <!-- end menu and bar  -->
+
+    <!-- hero banner start here -->
+    <section
+        class="relative bg-[#0A1D37] overflow-hidden py-8 md:py-14 font-['Plus_Jakarta_Sans'] min-h-[300px] flex items-center">
+
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute left-0 top-0 w-full lg:w-3/4 h-full z-0">
+                <img src="./assests/img/banner/about-banner1.png" alt="Manufacturing Background"
+                    class="w-full h-full object-cover"
+                    style="mask-image: linear-gradient(to right, black 40%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center text-white">
+            <p class="text-[#F5B800] text-xs font-bold uppercase tracking-[0.2em] mb-6">Insights & Updates</p>
+            <h1 class="text-4xl md:text-5xl mb-4 font-extrabold tracking-tight">Industry Knowledge & Pharma Insights
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-300 leading-relaxed text-base md:text-lg">
+                Regulatory news, API science, and manufacturing insights from the Kodel Life team.
+            </p>
+        </div>
+    </section>
+    <!-- hero banner end here -->
+
+    <!-- blog section start here -->
+    <div x-data="{ 
+        activeTab: 'All',
+        searchQuery: '',
+        tabs: ['All', 'Market Insights', 'Quality & Compliance', 'API Science', 'Company News', 'Regulatory'],
+        blogs: [
+            {
+                category: 'Market Insights',
+                date: 'March 15, 2026',
+                readTime: '5 min read',
+                author: 'Dr. Kalpesh Tilava',
+                title: 'The Growing Global Demand for Loop Diuretics: What Pharma Buyers Need to Know',
+                desc: 'Loop diuretics like Furosemide continue to see rising global demand driven by aging populations and increasing cardiovascular disease prevalence.',
+                img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop',
+                featured: true
+            },
+            {
+                category: 'Quality & Compliance',
+                date: 'February 28, 2026',
+                readTime: '4 min read',
+                title: 'ISO 9001:2015 in API Manufacturing: Why Quality Management Systems Matter',
+                desc: 'Quality management certification is not just a badge — it is the foundation of trust in pharmaceutical supply...',
+                img: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=600&auto=format&fit=crop',
+                featured: false
+            },
+            {
+                category: 'Regulatory',
+                date: 'February 28, 2026',
+                readTime: '4 min read',
+                title: 'Navigating API Export Regulations: A Practical Guide for International Procurement',
+                desc: 'Exporting APIs across borders involves a complex web of regulatory requirements. This guide breaks down...',
+                img: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=600&auto=format&fit=crop',
+                featured: false
+            },
+            {
+                category: 'API Science',
+                date: 'February 28, 2026',
+                readTime: '4 min read',
+                title: 'Metoprolol Succinate vs Tartrate: Understanding the API Difference',
+                desc: 'Both are selective beta-1 blockers derived from Metoprolol base, but their pharmacokinetic profiles...',
+                img: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?q=80&w=600&auto=format&fit=crop',
+                featured: false
+            }
+        ],
+        get filteredBlogs() {
+            return this.blogs.filter(blog => {
+                const matchesTab = this.activeTab === 'All' || blog.category === this.activeTab;
+                const matchesSearch = blog.title.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+                                    blog.desc.toLowerCase().includes(this.searchQuery.toLowerCase());
+                return matchesTab && matchesSearch;
+            });
+        }
+    }" class="max-w-7xl mx-auto px-6 py-10">
+
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12">
+    
+    <div class="flex flex-nowrap lg:flex-wrap gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar -mx-6 px-6 lg:mx-0 lg:px-0">
+        <template x-for="tab in tabs" :key="tab">
+            <button @click="activeTab = tab"
+                :class="activeTab === tab ? 'bg-[#1B55C5] text-white' : 'bg-[#F8FAFC] text-[#64748B] hover:bg-gray-100'"
+                /* Added whitespace-nowrap to prevent text breaking */
+                class="px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-transparent whitespace-nowrap"
+                x-text="tab">
+            </button>
+        </template>
+    </div>
+
+    <div class="relative w-full lg:w-80">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </span>
+        <input type="text" x-model="searchQuery" placeholder="Search by name, class, CAS..."
+            class="w-full pl-10 pr-4 py-2.5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-full text-sm focus:outline-none focus:border-[#1B55C5] focus:ring-1 focus:ring-[#1B55C5] transition-all">
+    </div>
+</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <template x-for="blog in filteredBlogs" :key="blog.title">
+                <div
+                    :class="blog.featured && searchQuery === '' && activeTab === 'All' 
+            ? 'lg:col-span-3 flex flex-col lg:flex-row bg-white rounded-[24px] border border-[#E2E8F0] overflow-hidden' 
+            : 'bg-white rounded-xl overflow-hidden border-t-[0.8px] border-black/5 shadow-[0px_4px_10px_0px_#0000001A] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300'">
+                    <div class="relative overflow-hidden"
+                        :class="blog.featured && searchQuery === '' && activeTab === 'All' ? 'lg:w-1/2 h-[352px]' : 'h-[220px]'">
+                        <img :src="blog.img" :alt="blog.title"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                        <span
+                            class="absolute top-4 left-4 text-[12px] font-bold px-3 py-1 rounded-full backdrop-blur-sm border-t-[0.8px] transition-colors duration-300"
+                            :class="{
+        'border-[#A4F4CF] bg-[#ECFDF5] text-[#007A55]': blog.category === 'Market Insights',
+        'border-[#FEE685] bg-[#FFFBEB] text-[#BB4D00]': blog.category === 'Quality & Compliance',
+        'border-[#1B55C54D] bg-[#EBF2FF] text-[#1B55C5]': blog.category === 'Regulatory',
+        'border-[#E9D4FF] bg-[#FAF5FF] text-[#8200DB]': blog.category === 'API Science'
+    }" x-text="blog.category">
+                        </span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow"
+                        :class="blog.featured && searchQuery === '' && activeTab === 'All' ? 'lg:w-1/2 lg:p-10 justify-center' : ''">
+                        <div class="flex items-center gap-2 text-sm text-[#717171] mb-3">
+                            <span x-text="blog.date"></span>
+                            <span class="w-1 h-1 bg-[#717171] rounded-full"></span>
+                            <span x-text="blog.readTime"></span>
+                        </div>
+
+                        <h3 class="font-bold text-[#0A2342] leading-tight mb-3"
+                            :class="blog.featured && searchQuery === '' && activeTab === 'All' ? 'text-2xl lg:text-3xl' : 'text-[18px] line-clamp-2'"
+                            x-text="blog.title">
+                        </h3>
+
+                        <p class="text-sm font-regular text-[#717171] leading-[22px] mb-6"
+                            :class="blog.featured && searchQuery === '' && activeTab === 'All' ? 'text-base' : 'line-clamp-3'"
+                            x-text="blog.desc">
+                        </p>
+
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-sm font-semibold text-[#717171]" x-text="'By ' + blog.author"></span>
+                            <a href="blog-details.html"
+                                class="text-sm font-bold text-[#1B55C5] flex items-center gap-1 group">
+                                Read More
+                                <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div x-show="filteredBlogs.length === 0" class="col-span-full py-20 text-center">
+                <p class="text-xl text-gray-400 font-medium">No articles found matching your criteria.</p>
+                <button @click="activeTab = 'All'; searchQuery = ''"
+                    class="mt-4 text-[#1B55C5] font-bold underline">Clear all filters</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- blog section end here -->
+
+    <!-- cta section start here -->
+    <section class="relative w-full py-16 px-4 overflow-hidden sans">
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,#0A2342_0%,#0D3B5E_50%,#1B55C5_100%)] opacity-95"></div>
+
+        <div class="absolute inset-0  mix-blend-overlay">
+            <img src="./assests/img/banner/home-cta-bg.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto text-center">
+            <span class="text-sm font-semibold text-brand-yellow tracking-[1.4px] uppercase mb-4 block">
+                Partner With Us
+            </span>
+
+            <h2 class="text-[32px] md:text-[44px] font-extrabold text-white leading-tight mb-6 max-w-4xl mx-auto">
+                Looking for a Reliable API Manufacturing Partner?
+            </h2>
+
+            <p class="text-base md:text-[18px] font-normal text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+                Kodel Life delivers ISO 9001:2015 certified APIs to 21 countries. Reach out to discuss your
+                requirements.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="Contact.html"
+                    class="px-10 py-4 bg-brand-yellow text-[#0A2342] font-bold text-base rounded-full hover:bg-[#E5AB00] transition-colors shadow-lg shadow-black/10">
+                    Enquire Now
+                </a>
+
+                <a href="product.html"
+                    class="px-10 py-4 border-[1.5px] border-white/40 text-white font-bold text-base rounded-full hover:bg-white/10 transition-all backdrop-blur-sm">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- cta section end here -->
+
+    <!-- footer section start here -->
+    <footer class="bg-[#051127] text-white pt-20 pb-6 font-sans">
+        <div class="max-w-full mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-8">
+                <div class="lg:col-span-3">
+                    <img src="./assests/img/logo/logo.svg" alt="Kodel Logo" class="h-12 mb-8">
+                    <p class="text-base leading-6 text-[#D1DDF3] mb-8">
+                        Kodel Life is a premier API manufacturer and exporter, delivering precision-crafted
+                        pharmaceutical ingredients to 21 countries across Asia, Africa, Europe, and the Americas.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/kodellifesciencellp?mibextid=ZbWKwL"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/face.svg" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/kodellifesciencellp/profilecard/?igsh=MTNpMDV0YjVkMnRnaw%3D%3D"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/insta.svg" alt="">
+                        </a>
+                        <a href="https://x.com/kodellife?t=4z0s-VkeyUoVu6etTekQHg&s=09"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                              <img src="./assests/img/icon/twitter.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                       <li><a href="about.html" class="hover:text-brand-yellow transition-colors">About Us</a></li>
+                        <li><a href="product.html" class="hover:text-brand-yellow transition-colors">Products</a></li>
+                        <li><a href="Contact.html" class="hover:text-brand-yellow transition-colors">Contact</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-yellow transition-colors">Blogs & Insights</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Our APIs</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="furosemide.html" class="hover:text-brand-yellow transition-colors">Furosemide</a></li>
+                        <li><a href="hydrochlorothiazide.html" class="hover:text-brand-yellow transition-colors">Hydrochlorothiazide</a></li>
+                        <li><a href="metoprolol-succinate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Succinate</a></li>
+                        <li><a href="metoprolol-tartrate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Tartrate</a></li>
+                        <li><a href="piroxicam.html" class="hover:text-brand-yellow transition-colors">Piroxicam</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="api-manufacturing.html" class="hover:text-brand-yellow transition-colors">API Manufacturing</a></li>
+                        <li><a href="intermediates-supply.html" class="hover:text-brand-yellow transition-colors">Intermediates Supply</a></li>
+                        <li><a href="custom-quantities.html" class="hover:text-brand-yellow transition-colors">Custom Quantities</a></li>
+                        <li><a href="request-a-sample.html" class="hover:text-brand-yellow transition-colors">Request a Sample</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-phone.svg" alt="phone">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">+91 95375 22225</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-mail.svg" alt="maifooter-mail"></span>
+                            <span class="text-base text-[#D1DDF3]">info@kodellife.com</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-map.svg" alt="location">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">Survey No. 133/6, Pipaliya, Morbi, Gujarat
+                                363660</span>
+                        </div>
+                    </div>
+
+                    <h4 class="text-base font-bold mb-4">Key Markets</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Thailand</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Vietnam</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">UAE</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">USA</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Kenya</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Bangladesh</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Malaysia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#D1DDF3]">
+                <p>© 2026 Kodel Life. All rights reserved. Developed by <a href="https://theuniqueitsolution.com/"
+                        class="text-white hover:underline">Unique IT Solutions</a></p>
+                <p class="italic opacity-80">"Precision Chemistry. Global Reach."</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end here -->
+
+    <script src="./assests/js/script.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</body>
+
+</html>

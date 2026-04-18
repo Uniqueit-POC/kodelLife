@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assests/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- start menu and bar  -->
+    <header class="bg-[#051127] px-8 py-4 flex items-center justify-between font-sans relative">
+
+        <div class="flex items-center space-x-2 z-50">
+            <div class="flex flex-col leading-none">
+                <img src="./assests/img/logo/logo.svg" alt="">
+            </div>
+        </div>
+
+         <nav class="hidden lg:flex items-center space-x-8 text-[#C7C7C7] font-medium text-base leading-normal">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-gray-300 transition focus:outline-none">
+                    <span>Products</span>
+                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden group-hover:block z-50">
+                    <a href="product.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">API</a>
+                    <a href="intermediate-api.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Intermediate API</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="hover:text-gray-300 transition">About</a>
+            <a href="blogs.html" class="hover:text-gray-300 transition">Blogs</a>
+            <a href="contact.html" class="hover:text-gray-300 transition">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <a href="Contact.html"
+                class="hidden sm:flex bg-[#F5B800] hover:bg-[#e6ae00] text-[#0A2342] px-5 py-2 rounded-full font-semibold items-center space-x-2 transition-all text-base">
+                <i class="fa-solid fa-flask"></i>
+                <span>Request a Sample</span>
+            </a>
+
+            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl focus:outline-none z-50">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+       <div id="mobile-menu"
+            class="fixed inset-0 bg-[#0A2342] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col items-center justify-center space-y-8 text-xl text-white">
+            <a href="index.html" class="text-[#F5B800]">Home</a>
+            <button onclick="toggleMobileDropdown()" class="flex items-center space-x-2">
+                <span>Products</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div id="mobile-dropdown" class="hidden flex-col items-center space-y-4 bg-[#00153d] w-full py-4 text-base">
+                <a href="product.html" class="text-gray-300">API</a>
+                <a href="intermediate-api.html" class="text-gray-300">Intermediate API</a>
+            </div>
+            <a href="about.html" class="text-[#F5B800]">About</a>
+            <a href="blogs.html" class="text-gray-300">Blogs</a>
+            <a href="contact.html" class="text-gray-300">Contact</a>
+            <a href="contact.html" class="bg-[#F5B800] text-[#0A2342] px-8 py-3 rounded-full font-bold">Request a Sample</a>
+        </div>
+
+    </header>
+    <!-- end menu and bar  -->
+
+    <!-- hero banner start here -->
+    <section class="font-['Plus_Jakarta_Sans'] bg-[#F8FAFF]">
+
+        <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto text-[14px]">
+            <div class="flex items-center gap-2 text-[#62748E]">
+                <a href="index.html" class="hover:text-[#0A2342]">Home</a>
+                <span><svg class="w-4 h-4 text-[#CBD5E1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></span>
+                <a href="blogs.html" class="hover:text-[#0A2342]">Blogs</a>
+                <span><svg class="w-4 h-4 text-[#CBD5E1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></span>
+                <span class="text-[#0A2342] font-medium truncate max-w-[200px] md:max-w-none">
+                    The Growing Global Demand for Loop Diuretics...
+                </span>
+            </div>
+            <a href="blogs.html" class="hidden md:block text-[#16449E] font-medium flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Back to Blogs
+            </a>
+        </nav>
+
+        <div class="bg-[#0A2342] pt-16 pb-28 md:pb-28 px-6 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <span
+                    class="bg-[#EFF6FF] text-[#1447E6] px-4 py-1 rounded-full text-[12px] font-semibold border-t-[0.8px] border-[#BEDBFF]">
+                    Market Insights
+                </span>
+
+                <h1
+                    class="text-white text-[32px] md:text-[40px] font-bold leading-[48px] md:leading-[56px] mt-6 mb-8 max-w-4xl">
+                    The Growing Global Demand for Loop Diuretics: What Pharma Buyers Need to Know
+                </h1>
+
+                <div class="flex flex-wrap items-center gap-6 text-white/80 text-[14px]">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-7 h-7 flex items-center justify-center bg-[#1B55C5] rounded-full text-[10px] font-bold text-white">
+                            DK
+                        </div>
+                        <span class="font-medium text-white">Dr. Kalpesh Tilava</span>
+                        <span class="text-white/60">— Director, Technical & R&D</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        March 15, 2026
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        5 min read
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute left-0 top-0 w-full lg:w-3/4 h-full z-0">
+                <img src="./assests/img/banner/about-banner1.png" alt="Manufacturing Background"
+                    class="w-full h-full object-cover"
+                    style="mask-image: linear-gradient(to right, black 40%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);">
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 -mt-14 md:-mt-16 relative z-20">
+            <div
+                class="rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] border-4 border-white/10">
+                <img src="./assests/img/blog/Image (The Growing Global Demand for Loop Diuretics_ What Pharma Buyers Need to Know).png"
+                    alt="Laboratory Research" class="w-full h-[300px] md:h-[380px] object-cover" />
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 py-12 font-['Plus_Jakarta_Sans']">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+
+                <div class="lg:w-2/3 space-y-8 text-[#0A2342]">
+                    <nav class="flex text-sm text-[#64748B] mb-8">
+                        <span>Home</span> <span class="mx-2">
+                            <svg class="w-4 h-4 text-[#CBD5E1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                        <span>Blogs & Insights</span> <span class="mx-2">
+                            <svg class="w-4 h-4 text-[#CBD5E1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                        <span class="text-[#0A2342] font-2xl font-semibold">Global Demand Surge</span>
+                    </nav>
+
+                    <header>
+                        <div class="border-l-4 border-[#1B55C5] pl-6 mb-8">
+                            <p class="text-[#64748B] text-base leading-relaxed">
+                                Loop diuretics like Furosemide continue to see rising global demand driven by aging
+                                populations and increasing cardiovascular disease prevalence. Explore what this means
+                                for procurement teams.
+                            </p>
+                        </div>
+                        <h1 class="text-xl lg:text-2xl text-[#0A2342] font-bold mb-6">Global Demand Surge for Loop
+                            Diuretics</h1>
+                        <p class="text-[#64748B] leading-relaxed mb-8">
+                            The global loop diuretics market is experiencing unprecedented growth, driven by the rising
+                            prevalence of chronic kidney disease, congestive heart failure, and hypertension across
+                            aging populations worldwide.
+                        </p>
+                    </header>
+
+                    <section class="space-y-6">
+                        <h2 class="text-xl lg:text-2xl text-[#0A2342] font-bold mb-6">Key Market Drivers</h2>
+
+                        <div class="space-y-4">
+                            <h3 class="text-lg text-[#0A2342] font-bold">Aging Global Population</h3>
+                            <p class="text-[#45556C] text-base">
+                                With the global population aged 65+ expected to double by 2050, demand for treatments
+                                managing age-related cardiovascular and renal conditions continues to surge.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-lg text-[#0A2342] font-bold">Rising Cardiovascular Disease Burden</h3>
+                            <p class="text-[#45556C] text-base">
+                                The WHO estimates that cardiovascular diseases cause over 17.9 million deaths annually.
+                                API demand from countries like Thailand, Vietnam, and Bangladesh is rising sharply.
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-lg text-[#0A2342] font-bold">Generic Pharmaceutical Growth</h3>
+                            <p class="text-[#45556C] text-base">
+                                The global generic pharmaceuticals market is expected to grow at a CAGR of 5.8% through
+                                2030. With Furosemide's established patent-free status, API manufacturers who can supply
+                                certified, high-capacity product will be well-positioned.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="bg-[#F8FAFC] p-8 rounded-2xl border border-[#E2E8F0]">
+                        <h3 class="text-lg text-[#0A2342] font-bold mb-2">What Buyers Should Look For</h3>
+                        <p class="text-[#45556C] text-base mb-2">
+                            When sourcing Furosemide API, procurement teams should prioritize:
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#1B55C5] font-bold">•</span>
+                                <span><strong>Regulatory compliance:</strong> ISO 9001:2015 and FDA-compliant
+                                    manufacturing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#1B55C5] font-bold">•</span>
+                                <span><strong>Capacity assurance:</strong> Suppliers who can guarantee consistent supply
+                                    at 20-30 MT/month scale</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#1B55C5] font-bold">•</span>
+                                <span><strong>Quality documentation:</strong> Full CoA, regulatory dossiers, and DMF
+                                    filing support</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-[#1B55C5] font-bold">•</span>
+                                <span><strong>Track record:</strong> Demonstrated supply to multiple international
+                                    markets</span>
+                            </li>
+                        </ul>
+                        <p class="text-[#45556C] text-base my-2">
+                            At Kodel Life, we produce Furosemide API at up to 30 MT/month, making us one of the region's
+                            highest-capacity producers for this molecule.
+                        </p>
+                    </section>
+
+                    <div class="space-y-4">
+                        <h3 class="text-lg text-[#0A2342] font-bold">Looking Ahead</h3>
+                        <p class="text-[#45556C] text-base">
+                            With Kodel Life already supplying to 21 countries across Asia, Africa, and the Americas, we
+                            are well-positioned to help pharmaceutical companies meet the growing demand for affordable,
+                            certified Furosemide API.
+                        </p>
+                        <p class="text-[#45556C] text-base">
+                            *Contact our team today to discuss your sourcing requirements.*
+                        </p>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto font-['Plus_Jakarta_Sans']">
+
+                        <div class="border-t border-[#E2E8F0] pt-8">
+                            <h3 class="text-[#94A3B8] text-[12px] font-bold tracking-[1px] uppercase mb-4">Topics</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="#"
+                                    class="px-5 py-2.5 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0A2342] text-[14px] font-medium rounded-full transition-colors">
+                                    Furosemide
+                                </a>
+                                <a href="#"
+                                    class="px-5 py-2.5 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0A2342] text-[14px] font-medium rounded-full transition-colors">
+                                    Loop Diuretics
+                                </a>
+                                <a href="#"
+                                    class="px-5 py-2.5 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0A2342] text-[14px] font-medium rounded-full transition-colors">
+                                    Market Insights
+                                </a>
+                                <a href="#"
+                                    class="px-5 py-2.5 bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#0A2342] text-[14px] font-medium rounded-full transition-colors">
+                                    API
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-[#E2E8F0] mt-8 pt-8">
+                            <h3 class="text-[#94A3B8] text-[12px] font-bold tracking-[1px] uppercase mb-5">Share this
+                                article</h3>
+                            <div class="flex flex-wrap gap-3">
+
+                                <button
+                                    class="flex items-center gap-2 bg-[#0A66C2] hover:brightness-110 text-white px-5 py-2 rounded-full text-[14px] font-semibold transition-all">
+                                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                                </button>
+
+                                <button
+                                    class="flex items-center gap-2 bg-[#00ACEE] hover:brightness-110 text-white px-5 py-2 rounded-full text-[14px] font-semibold transition-all">
+                                    <i class="fa-brands fa-twitter"></i> Twitter
+                                </button>
+
+                                <button
+                                    class="flex items-center gap-2 bg-[#0A2342] hover:brightness-110 text-white px-5 py-2 rounded-full text-[14px] font-semibold transition-all">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                    </svg>
+                                    Email
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <aside class="lg:w-1/3 space-y-6 lg:sticky lg:top-8">
+
+                    <div class="bg-white border border-[#E2E8F0] rounded-2xl p-6 shadow-sm">
+                        <h4 class="text-xs font-bold text-[#64748B] uppercase tracking-wider mb-4">About the Author</h4>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 bg-[#0A2342] text-white flex items-center justify-center rounded-full font-bold">
+                                DK</div>
+                            <div>
+                                <p class="font-bold text-[#0A2342]">Dr. Kalpesh Tilava</p>
+                                <p class="text-xs text-[#1B55C5] font-semibold">Director, Technical & R&D</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#64748B] leading-relaxed">
+                            Member of the Kodel Life leadership team, contributing expertise in pharmaceutical API
+                            manufacturing and global market development.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#0A2342] rounded-2xl p-8 text-white">
+                        <p class="text-[10px] font-bold uppercase tracking-[2px] mb-2 opacity-70">API ENQUIRY</p>
+                        <h4 class="text-lg font-bold mb-4">Interested in Our Products?</h4>
+                        <p class="text-sm opacity-80 mb-6 leading-relaxed">
+                            Request samples, pricing, or technical documentation from our API portfolio.
+                        </p>
+                        <button
+                            class="w-full bg-[#FBBF24] hover:bg-[#F59E0B] text-[#0A2342] font-bold py-3 px-6 rounded-xl flex items-center justify-between transition-colors">
+                            Explore Products
+                            <span>→</span>
+                        </button>
+                    </div>
+
+                    <div class="bg-[#0A2342] rounded-2xl p-8 text-white">
+                        <p class="text-[10px] font-bold uppercase tracking-[2px] mb-2 opacity-70">INTERMEDIATE API
+                            ENQUIRY</p>
+                        <h4 class="text-lg font-bold mb-4">Interested in Our Products?</h4>
+                        <p class="text-sm opacity-80 mb-6 leading-relaxed">
+                            Request samples, pricing, or technical documentation from our Intermediates portfolio.
+                        </p>
+                        <button
+                            class="w-full bg-[#FBBF24] hover:bg-[#F59E0B] text-[#0A2342] font-bold py-3 px-6 rounded-xl flex items-center justify-between transition-colors">
+                            Explore Products
+                            <span>→</span>
+                        </button>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!-- hero banner end here -->
+
+    <!-- cta section start here -->
+    <section class="relative w-full py-16 px-4 overflow-hidden sans">
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,#0A2342_0%,#0D3B5E_50%,#1B55C5_100%)] opacity-95"></div>
+
+        <div class="absolute inset-0  mix-blend-overlay">
+            <img src="./assests/img/banner/home-cta-bg.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto text-center">
+            <span class="text-sm font-semibold text-brand-yellow tracking-[1.4px] uppercase mb-4 block">
+                Partner With Us
+            </span>
+
+            <h2 class="text-[32px] md:text-[44px] font-extrabold text-white leading-tight mb-6 max-w-4xl mx-auto">
+                Looking for a Reliable API Manufacturing Partner?
+            </h2>
+
+            <p class="text-base md:text-[18px] font-normal text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
+                Kodel Life delivers ISO 9001:2015 certified APIs to 21 countries. Reach out to discuss your
+                requirements.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="Contact.html"
+                    class="px-10 py-4 bg-brand-yellow text-[#0A2342] font-bold text-base rounded-full hover:bg-[#E5AB00] transition-colors shadow-lg shadow-black/10">
+                    Enquire Now
+                </a>
+
+                <a href="product.html"
+                    class="px-10 py-4 border-[1.5px] border-white/40 text-white font-bold text-base rounded-full hover:bg-white/10 transition-all backdrop-blur-sm">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- cta section end here -->
+
+    <!-- footer section start here -->
+    <footer class="bg-[#051127] text-white pt-20 pb-6 font-sans">
+        <div class="max-w-full mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-8">
+                <div class="lg:col-span-3">
+                    <img src="./assests/img/logo/logo.svg" alt="Kodel Logo" class="h-12 mb-8">
+                    <p class="text-base leading-6 text-[#D1DDF3] mb-8">
+                        Kodel Life is a premier API manufacturer and exporter, delivering precision-crafted
+                        pharmaceutical ingredients to 21 countries across Asia, Africa, Europe, and the Americas.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/kodellifesciencellp?mibextid=ZbWKwL"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/face.svg" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/kodellifesciencellp/profilecard/?igsh=MTNpMDV0YjVkMnRnaw%3D%3D"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                            <img src="./assests/img/icon/insta.svg" alt="">
+                        </a>
+                        <a href="https://x.com/kodellife?t=4z0s-VkeyUoVu6etTekQHg&s=09"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors">
+                              <img src="./assests/img/icon/twitter.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                       <li><a href="about.html" class="hover:text-brand-yellow transition-colors">About Us</a></li>
+                        <li><a href="product.html" class="hover:text-brand-yellow transition-colors">Products</a></li>
+                        <li><a href="Contact.html" class="hover:text-brand-yellow transition-colors">Contact</a></li>
+                        <li><a href="blog.html" class="hover:text-brand-yellow transition-colors">Blogs & Insights</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Our APIs</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="furosemide.html" class="hover:text-brand-yellow transition-colors">Furosemide</a></li>
+                        <li><a href="hydrochlorothiazide.html" class="hover:text-brand-yellow transition-colors">Hydrochlorothiazide</a></li>
+                        <li><a href="metoprolol-succinate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Succinate</a></li>
+                        <li><a href="metoprolol-tartrate.html" class="hover:text-brand-yellow transition-colors">Metoprolol Tartrate</a></li>
+                        <li><a href="piroxicam.html" class="hover:text-brand-yellow transition-colors">Piroxicam</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2">
+                    <h4 class="text-[18px] font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-base text-[#D1DDF3]">
+                        <li><a href="api-manufacturing.html" class="hover:text-brand-yellow transition-colors">API Manufacturing</a></li>
+                        <li><a href="intermediates-supply.html" class="hover:text-brand-yellow transition-colors">Intermediates Supply</a></li>
+                        <li><a href="custom-quantities.html" class="hover:text-brand-yellow transition-colors">Custom Quantities</a></li>
+                        <li><a href="request-a-sample.html" class="hover:text-brand-yellow transition-colors">Request a Sample</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3">
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-phone.svg" alt="phone">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">+91 95375 22225</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-mail.svg" alt="maifooter-mail"></span>
+                            <span class="text-base text-[#D1DDF3]">info@kodellife.com</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span
+                                class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <img src="./assests/img/icon/footer-map.svg" alt="location">
+                            </span>
+                            <span class="text-base text-[#D1DDF3]">Survey No. 133/6, Pipaliya, Morbi, Gujarat
+                                363660</span>
+                        </div>
+                    </div>
+
+                    <h4 class="text-base font-bold mb-4">Key Markets</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Thailand</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Vietnam</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">UAE</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">USA</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Kenya</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Bangladesh</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-sm text-[#D1DDF3]">Malaysia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#D1DDF3]">
+                <p>© 2026 Kodel Life. All rights reserved. Developed by <a href="https://theuniqueitsolution.com/"
+                        class="text-white hover:underline">Unique IT Solutions</a></p>
+                <p class="italic opacity-80">"Precision Chemistry. Global Reach."</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end here -->
+
+    <script src="./assests/js/script.js"></script>
+
+</body>
+
+</html>
