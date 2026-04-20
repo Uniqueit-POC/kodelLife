@@ -55,43 +55,61 @@ tailwind.config = {
         const track = document.getElementById('track');
         const dots = document.querySelectorAll('.dot');
         const currentIndexSpan = document.getElementById('current-index');
+        const nextBtn = document.getElementById('next');
+        const prevBtn = document.getElementById('prev');
         const totalSlides = 3;
         let index = 0;
+        let autoSlideTimer;
 
-        function updateSlider() {
-            // Move slide track
-            track.style.transform = `translateX(-${index * 100}%)`;
-            
-            // Update counter (format 01, 02, etc)
-            currentIndexSpan.innerText = (index + 1).toString().padStart(2, '0');
-            
-            // Update dots
-            dots.forEach((dot, i) => {
-                if(i === index) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
+        if (track && currentIndexSpan && nextBtn && prevBtn && dots.length) {
+            function updateSlider() {
+                // Move slide track
+                track.style.transform = `translateX(-${index * 100}%)`;
 
-        document.getElementById('next').addEventListener('click', () => {
-            index = (index + 1) % totalSlides;
-            updateSlider();
-        });
+                // Update counter (format 01, 02, etc)
+                currentIndexSpan.innerText = (index + 1).toString().padStart(2, '0');
 
-        document.getElementById('prev').addEventListener('click', () => {
-            index = (index - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        });
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
 
-        // Allow clicking dots to navigate
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                index = i;
+            function startAutoSlide() {
+                clearInterval(autoSlideTimer);
+                autoSlideTimer = setInterval(() => {
+                    index = (index + 1) % totalSlides;
+                    updateSlider();
+                }, 5000);
+            }
+
+            nextBtn.addEventListener('click', () => {
+                index = (index + 1) % totalSlides;
                 updateSlider();
+                startAutoSlide();
             });
-        });
+
+            prevBtn.addEventListener('click', () => {
+                index = (index - 1 + totalSlides) % totalSlides;
+                updateSlider();
+                startAutoSlide();
+            });
+
+            // Allow clicking dots to navigate
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    index = i;
+                    updateSlider();
+                    startAutoSlide();
+                });
+            });
+
+            startAutoSlide();
+        }
   // home page here banner slider end here
 
 //   home page faq seciton start here
@@ -140,3 +158,48 @@ document.querySelectorAll('.faq-item button').forEach(button => {
         });
     });
 //   home page faq seciton end here
+
+// Request sample modal start
+const sampleModal = document.getElementById('sample-modal');
+const sampleModalClose = document.getElementById('sample-modal-close');
+const requestSampleTriggers = document.querySelectorAll('.request-sample-trigger');
+
+function openSampleModal() {
+  if (!sampleModal) return;
+  sampleModal.classList.remove('hidden');
+  sampleModal.classList.add('flex');
+  document.body.classList.add('overflow-hidden');
+}
+
+function closeSampleModal() {
+  if (!sampleModal) return;
+  sampleModal.classList.add('hidden');
+  sampleModal.classList.remove('flex');
+  document.body.classList.remove('overflow-hidden');
+}
+
+requestSampleTriggers.forEach(trigger => {
+  trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    openSampleModal();
+  });
+});
+
+if (sampleModalClose) {
+  sampleModalClose.addEventListener('click', closeSampleModal);
+}
+
+if (sampleModal) {
+  sampleModal.addEventListener('click', (event) => {
+    if (event.target === sampleModal) {
+      closeSampleModal();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeSampleModal();
+    }
+  });
+}
+// Request sample modal end
